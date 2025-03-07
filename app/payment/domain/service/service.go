@@ -26,10 +26,10 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
-	loginData "github.com/west2-online/DomTok/pkg/base/context"
-	paymentStatus "github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/payment/domain/model"
+	loginData "github.com/west2-online/domtok/pkg/base/context"
+	paymentStatus "github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // CreatePaymentInfo sf可以生成id,详见user/domain/service/service.go
@@ -221,17 +221,17 @@ func (svc *PaymentService) GetOrderStatus(ctx context.Context, orderID int64) (b
 
 // GetPayInfo 模拟获取支付信息
 func (svc *PaymentService) GetPayInfo(_ context.Context) (int64, string, error) {
-	return time.Now().UnixMilli(), paymentStatus.PaymentStyleDomTok, nil
+	return time.Now().UnixMilli(), paymentStatus.PaymentStyledomtok, nil
 }
 
 // Pay 模拟支付
 func (svc *PaymentService) Pay(_ context.Context) (int64, string, error) {
-	return time.Now().UnixMilli(), paymentStatus.PaymentStyleDomTok, nil
+	return time.Now().UnixMilli(), paymentStatus.PaymentStyledomtok, nil
 }
 
 // Refund 模拟退款
 func (svc *PaymentService) Refund(_ context.Context) (int64, string, error) {
-	return time.Now().UnixMilli(), paymentStatus.PaymentStyleDomTok, nil
+	return time.Now().UnixMilli(), paymentStatus.PaymentStyledomtok, nil
 }
 
 func (svc *PaymentService) CancelOrder(ctx context.Context, orderID int64, paymentAt int64, paymentStyle string) error {

@@ -19,7 +19,7 @@ package cache
 import (
 	"fmt"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 func (c *userCache) UserLogOutKey(uid int64) string {

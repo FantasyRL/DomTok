@@ -20,9 +20,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	contextLogin "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	contextLogin "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func (uc *useCase) CreateCoupon(ctx context.Context, coupon *model.Coupon) (int64, error) {

@@ -24,11 +24,11 @@ import (
 	"github.com/bytedance/sonic"
 	"github.com/olivere/elastic/v7"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 func (es *CommodityElastic) IsExist(ctx context.Context, indexName string) bool {

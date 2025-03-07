@@ -27,11 +27,11 @@ import (
 	"github.com/smartystreets/goconvey/convey"
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/domain/service"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/mysql"
-	contextLogin "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/service"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/mysql"
+	contextLogin "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func TestUseCase_CreateCoupon(t *testing.T) {

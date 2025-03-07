@@ -20,8 +20,8 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // WithLoginData 将LoginData加入到context中，通过metainfo传递到RPC server

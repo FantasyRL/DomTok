@@ -24,8 +24,8 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/client"
 	"github.com/cloudwego/hertz/pkg/protocol"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
-	"github.com/west2-online/DomTok/app/assistant/service"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/assistant/service"
 )
 
 type Client struct {

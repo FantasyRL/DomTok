@@ -24,7 +24,7 @@ import (
 	. "github.com/bytedance/mockey"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
 )
 
 func TestToolPing_InvokableRun(t *testing.T) {

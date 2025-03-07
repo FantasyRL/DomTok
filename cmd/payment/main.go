@@ -26,14 +26,14 @@ import (
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 
-	"github.com/west2-online/DomTok/app/payment"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/payment/paymentservice"
-	"github.com/west2-online/DomTok/pkg/base"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/middleware"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/payment"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/payment/paymentservice"
+	"github.com/west2-online/domtok/pkg/base"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/middleware"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 var serviceName = constants.PaymentServiceName

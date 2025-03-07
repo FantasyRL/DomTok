@@ -22,10 +22,10 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // commodityDB impl domain.CommodityDB defined domain

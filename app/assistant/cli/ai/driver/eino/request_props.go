@@ -19,12 +19,12 @@ package eino
 import (
 	"github.com/cloudwego/eino/components/tool"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino/model"
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino/tools/remote"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino/model"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino/tools/remote"
 )
 
 const (
-	roleDescription = `你叫DomTok，是一个电商平台的AI助手`
+	roleDescription = `你叫domtok，是一个电商平台的AI助手`
 )
 
 var tools *[]tool.BaseTool

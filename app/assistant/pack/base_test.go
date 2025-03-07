@@ -23,8 +23,8 @@ import (
 	. "github.com/bytedance/mockey"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func Test_ResponseFactory_ConnectSuccess(t *testing.T) {

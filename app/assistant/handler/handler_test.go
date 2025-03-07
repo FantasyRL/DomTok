@@ -28,8 +28,8 @@ import (
 	"github.com/hertz-contrib/websocket"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/service"
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/app/assistant/service"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 func EntryPointNormalize() {

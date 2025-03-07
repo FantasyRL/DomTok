@@ -26,13 +26,13 @@ import (
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/cart/cartservice"
-	"github.com/west2-online/DomTok/kitex_gen/commodity/commodityservice"
-	"github.com/west2-online/DomTok/kitex_gen/order/orderservice"
-	"github.com/west2-online/DomTok/kitex_gen/payment/paymentservice"
-	"github.com/west2-online/DomTok/kitex_gen/user/userservice"
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/cart/cartservice"
+	"github.com/west2-online/domtok/kitex_gen/commodity/commodityservice"
+	"github.com/west2-online/domtok/kitex_gen/order/orderservice"
+	"github.com/west2-online/domtok/kitex_gen/payment/paymentservice"
+	"github.com/west2-online/domtok/kitex_gen/user/userservice"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 // 通用的RPC客户端初始化函数

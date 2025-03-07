@@ -17,17 +17,17 @@ limitations under the License.
 package payment
 
 import (
-	"github.com/west2-online/DomTok/app/payment/controllers/rpc"
-	"github.com/west2-online/DomTok/app/payment/domain/service"
-	"github.com/west2-online/DomTok/app/payment/infrastructure/mysql"
-	"github.com/west2-online/DomTok/app/payment/infrastructure/redis"
-	orderRpcPkg "github.com/west2-online/DomTok/app/payment/infrastructure/rpc"
-	"github.com/west2-online/DomTok/app/payment/usecase"
-	"github.com/west2-online/DomTok/kitex_gen/payment"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/payment/controllers/rpc"
+	"github.com/west2-online/domtok/app/payment/domain/service"
+	"github.com/west2-online/domtok/app/payment/infrastructure/mysql"
+	"github.com/west2-online/domtok/app/payment/infrastructure/redis"
+	orderRpcPkg "github.com/west2-online/domtok/app/payment/infrastructure/rpc"
+	"github.com/west2-online/domtok/app/payment/usecase"
+	"github.com/west2-online/domtok/kitex_gen/payment"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func InjectPaymentHandler() payment.PaymentService {

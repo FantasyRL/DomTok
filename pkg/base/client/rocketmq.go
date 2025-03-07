@@ -26,8 +26,8 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/producer"
 	"github.com/apache/rocketmq-client-go/v2/rlog"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 // GetRocketmqAdmin 获取一个 admin 实例以及 brokerAddr

@@ -17,11 +17,11 @@ limitations under the License.
 package rpc
 
 import (
-	"github.com/west2-online/DomTok/kitex_gen/cart/cartservice"
-	"github.com/west2-online/DomTok/kitex_gen/commodity/commodityservice"
-	"github.com/west2-online/DomTok/kitex_gen/order/orderservice"
-	"github.com/west2-online/DomTok/kitex_gen/payment/paymentservice"
-	"github.com/west2-online/DomTok/kitex_gen/user/userservice"
+	"github.com/west2-online/domtok/kitex_gen/cart/cartservice"
+	"github.com/west2-online/domtok/kitex_gen/commodity/commodityservice"
+	"github.com/west2-online/domtok/kitex_gen/order/orderservice"
+	"github.com/west2-online/domtok/kitex_gen/payment/paymentservice"
+	"github.com/west2-online/domtok/kitex_gen/user/userservice"
 )
 
 var (

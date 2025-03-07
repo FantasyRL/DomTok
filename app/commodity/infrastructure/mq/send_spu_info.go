@@ -22,10 +22,10 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 func (c *CommodityMQ) SendCreateSpuInfo(ctx context.Context, spu *model.Spu) error {

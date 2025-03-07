@@ -22,7 +22,7 @@ import (
 
 	"github.com/bits-and-blooms/bloom/v3"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 // BF 结构体表示一个布隆过滤器集合，用于高效地判断元素是否存在于集合中。

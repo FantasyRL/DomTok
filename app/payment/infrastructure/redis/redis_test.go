@@ -25,7 +25,7 @@ import (
 	"github.com/smartystreets/goconvey/convey"
 	"golang.org/x/net/context"
 
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func TestPaymentRedis_SetPaymentToken(t *testing.T) {

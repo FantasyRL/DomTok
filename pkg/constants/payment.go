@@ -154,5 +154,5 @@ func GetLedgerTransactionType(code int8) string {
 }
 
 const (
-	PaymentStyleDomTok = "DomTok"
+	PaymentStyledomtok = "domtok"
 )

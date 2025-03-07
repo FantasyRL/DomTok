@@ -20,7 +20,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/domain/model"
 )
 
 // OrderDB 表示订单模块的持久化存储接口

@@ -23,7 +23,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	"github.com/west2-online/DomTok/app/gateway/model/api/cart"
+	"github.com/west2-online/domtok/app/gateway/model/api/cart"
 )
 
 const (

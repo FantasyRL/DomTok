@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="display: inline-block; vertical-align: middle;">DomTok</h1>
+  <h1 style="display: inline-block; vertical-align: middle;">domtok</h1>
 </div>
 
 <div align="center">
@@ -7,7 +7,7 @@
 </div>
 
 ## Overview
-DomTok is a simple backend project for Douyin e-commerce based on HTTP and RPC protocols, adopting the clean architecture and distributed architecture. It utilizes technologies such as Kitex, Hertz, Eino, Mysql, Redis, Etcd, Kafka, Elasticsearch, Kibana, Filebeat, Jaeger, Rocketmq, Otel-Collector, several exporters, Prometheus, VictoriaMetrics, Cadvisor, and Grafana.
+domtok is a simple backend project for Douyin e-commerce based on HTTP and RPC protocols, adopting the clean architecture and distributed architecture. It utilizes technologies such as Kitex, Hertz, Eino, Mysql, Redis, Etcd, Kafka, Elasticsearch, Kibana, Filebeat, Jaeger, Rocketmq, Otel-Collector, several exporters, Prometheus, VictoriaMetrics, Cadvisor, and Grafana.
 
 ## Features
 - Cloud-native: Designed with a native Golang distributed architecture, based on the best practices of ByteDance.
@@ -151,6 +151,6 @@ We will show the visualization of monitoring implemented through many tools such
 
 ## Contributors
 
-<a href="https://github.com/west2-online/DomTok/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=west2-online/DomTok" />
+<a href="https://github.com/west2-online/domtok/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=west2-online/domtok" />
 </a>

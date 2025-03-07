@@ -19,10 +19,10 @@ package rpc
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/payment/controllers/rpc/pack"
-	"github.com/west2-online/DomTok/app/payment/usecase"
-	"github.com/west2-online/DomTok/kitex_gen/payment"
-	"github.com/west2-online/DomTok/pkg/base"
+	"github.com/west2-online/domtok/app/payment/controllers/rpc/pack"
+	"github.com/west2-online/domtok/app/payment/usecase"
+	"github.com/west2-online/domtok/kitex_gen/payment"
+	"github.com/west2-online/domtok/pkg/base"
 )
 
 type PaymentHandler struct {

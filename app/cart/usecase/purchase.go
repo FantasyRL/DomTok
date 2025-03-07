@@ -22,9 +22,9 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 func (u *UseCase) PurChaseCartGoods(ctx context.Context, goodsList []*model.CartGoods) (int64, error) {

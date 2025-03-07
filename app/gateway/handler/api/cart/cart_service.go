@@ -20,18 +20,19 @@ package cart
 
 import (
 	"context"
+
 	"github.com/samber/lo"
 
-	kmodel "github.com/west2-online/DomTok/kitex_gen/model"
+	kmodel "github.com/west2-online/domtok/kitex_gen/model"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 
-	api "github.com/west2-online/DomTok/app/gateway/model/api/cart"
-	"github.com/west2-online/DomTok/app/gateway/pack"
-	"github.com/west2-online/DomTok/app/gateway/rpc"
-	"github.com/west2-online/DomTok/kitex_gen/cart"
-	"github.com/west2-online/DomTok/pkg/errno"
+	api "github.com/west2-online/domtok/app/gateway/model/api/cart"
+	"github.com/west2-online/domtok/app/gateway/pack"
+	"github.com/west2-online/domtok/app/gateway/rpc"
+	"github.com/west2-online/domtok/kitex_gen/cart"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // AddGoodsIntoCart .

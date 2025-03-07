@@ -20,8 +20,8 @@ import (
 	"context"
 	"fmt"
 
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/errno"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func (u *UseCase) DeleteCartGoods(ctx context.Context) error {

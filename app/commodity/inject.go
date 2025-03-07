@@ -17,19 +17,19 @@ limitations under the License.
 package commodity
 
 import (
-	"github.com/west2-online/DomTok/app/commodity/controllers/rpc"
-	"github.com/west2-online/DomTok/app/commodity/domain/service"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/es"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/mq"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/mysql"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/redis"
-	"github.com/west2-online/DomTok/app/commodity/usecase"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/kafka"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity/controllers/rpc"
+	"github.com/west2-online/domtok/app/commodity/domain/service"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/es"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/mq"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/mysql"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/redis"
+	"github.com/west2-online/domtok/app/commodity/usecase"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func InjectCommodityHandler() commodity.CommodityService {

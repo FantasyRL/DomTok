@@ -20,9 +20,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
-	paymentStatus "github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/payment/domain/model"
+	paymentStatus "github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // CreatePayment 这里定义一些具体的方法和函数，比如校验密码，加密密码，创建用户之类的

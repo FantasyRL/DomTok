@@ -23,7 +23,7 @@ import (
 	"github.com/bytedance/mockey"
 	"github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func TestPaymentRedis_LoadScript(t *testing.T) {

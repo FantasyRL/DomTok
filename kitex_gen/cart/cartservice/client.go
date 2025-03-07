@@ -24,7 +24,7 @@ import (
 	client "github.com/cloudwego/kitex/client"
 	callopt "github.com/cloudwego/kitex/client/callopt"
 
-	cart "github.com/west2-online/DomTok/kitex_gen/cart"
+	cart "github.com/west2-online/domtok/kitex_gen/cart"
 )
 
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.

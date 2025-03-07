@@ -26,10 +26,10 @@ import (
 	glogger "gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // InitMySQL 通用初始化mysql函数，传入tableName指定表

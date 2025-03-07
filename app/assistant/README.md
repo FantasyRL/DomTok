@@ -42,7 +42,7 @@ import (
 	"github.com/cloudwego/eino/components/tool"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino/tools"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino/tools"
 )
 
 type ToolXXX struct {

@@ -19,11 +19,11 @@ package rpc
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/kitex_gen/order"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/kitex_gen/order"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func InitOrderRPC() {

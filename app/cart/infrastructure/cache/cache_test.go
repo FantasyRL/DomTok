@@ -23,12 +23,12 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/cart/domain/repository"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/cart/domain/repository"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // 如果你和前面 redis 测试类似，也可以直接用 initTest(t) 方式来初始化

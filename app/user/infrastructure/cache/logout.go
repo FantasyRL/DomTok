@@ -19,8 +19,8 @@ package cache
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func (c *userCache) SetUserLogOut(ctx context.Context, key string, token string) error {

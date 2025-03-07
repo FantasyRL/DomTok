@@ -20,7 +20,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/hertz-contrib/cors"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 func CorsMW() app.HandlerFunc {

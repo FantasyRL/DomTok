@@ -23,10 +23,10 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 
-	"github.com/west2-online/DomTok/app/gateway/pack"
-	"github.com/west2-online/DomTok/app/gateway/service"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/gateway/pack"
+	"github.com/west2-online/domtok/app/gateway/service"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 var (

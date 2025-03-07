@@ -24,12 +24,12 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/samber/lo"
 
-	api "github.com/west2-online/DomTok/app/gateway/model/api/order"
-	hmodel "github.com/west2-online/DomTok/app/gateway/model/model"
-	"github.com/west2-online/DomTok/app/gateway/pack"
-	"github.com/west2-online/DomTok/app/gateway/rpc"
-	kmodel "github.com/west2-online/DomTok/kitex_gen/model"
-	orderrpc "github.com/west2-online/DomTok/kitex_gen/order"
+	api "github.com/west2-online/domtok/app/gateway/model/api/order"
+	hmodel "github.com/west2-online/domtok/app/gateway/model/model"
+	"github.com/west2-online/domtok/app/gateway/pack"
+	"github.com/west2-online/domtok/app/gateway/rpc"
+	kmodel "github.com/west2-online/domtok/kitex_gen/model"
+	orderrpc "github.com/west2-online/domtok/kitex_gen/order"
 )
 
 // CreateOrder .

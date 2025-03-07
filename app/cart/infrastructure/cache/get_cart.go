@@ -19,7 +19,7 @@ package cache
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // GetCartCache 获得购物车缓存

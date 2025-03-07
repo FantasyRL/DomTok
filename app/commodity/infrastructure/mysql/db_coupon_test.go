@@ -23,7 +23,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
 )
 
 func TestCommodityDB_Coupon(t *testing.T) {

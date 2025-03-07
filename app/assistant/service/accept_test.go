@@ -26,8 +26,8 @@ import (
 	"github.com/hertz-contrib/websocket"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/app/assistant/pack"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/app/assistant/pack"
 )
 
 func TestCore_Accept(t *testing.T) {

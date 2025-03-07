@@ -20,7 +20,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
+	"github.com/west2-online/domtok/app/payment/domain/model"
 )
 
 type PaymentDB interface {

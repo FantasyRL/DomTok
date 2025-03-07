@@ -17,8 +17,8 @@ limitations under the License.
 package service
 
 import (
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 type UserVerifyOps func() error

@@ -23,9 +23,9 @@ import (
 
 	"github.com/golang-jwt/jwt"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 type Claims struct {

@@ -20,7 +20,7 @@ package commodityservice
 import (
 	server "github.com/cloudwego/kitex/server"
 
-	commodity "github.com/west2-online/DomTok/kitex_gen/commodity"
+	commodity "github.com/west2-online/domtok/kitex_gen/commodity"
 )
 
 // NewServer creates a server.Server with the given handler and options.

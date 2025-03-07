@@ -20,8 +20,8 @@ import (
 	"context"
 	"sync/atomic"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 type CommodityService struct {

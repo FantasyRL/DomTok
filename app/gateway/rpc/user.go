@@ -19,13 +19,13 @@ package rpc
 import (
 	"context"
 
-	api "github.com/west2-online/DomTok/app/gateway/model/api/user"
-	"github.com/west2-online/DomTok/app/gateway/model/model"
-	"github.com/west2-online/DomTok/kitex_gen/user"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	api "github.com/west2-online/domtok/app/gateway/model/api/user"
+	"github.com/west2-online/domtok/app/gateway/model/model"
+	"github.com/west2-online/domtok/kitex_gen/user"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func InitUserRPC() {

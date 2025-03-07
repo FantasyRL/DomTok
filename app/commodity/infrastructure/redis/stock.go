@@ -22,10 +22,10 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 func (c *commodityCache) GetLockStockNum(ctx context.Context, key string) (int64, error) {

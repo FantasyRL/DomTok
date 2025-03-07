@@ -21,7 +21,7 @@ package payment
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 
-	payment "github.com/west2-online/DomTok/app/gateway/handler/api/payment"
+	payment "github.com/west2-online/domtok/app/gateway/handler/api/payment"
 )
 
 /*

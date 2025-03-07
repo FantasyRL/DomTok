@@ -21,7 +21,7 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
 )
 
 type commodityCache struct {

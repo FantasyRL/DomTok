@@ -19,10 +19,10 @@ package usecase
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
-	"github.com/west2-online/DomTok/app/commodity/domain/service"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/app/commodity/domain/service"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
 )
 
 type CommodityUseCase interface {

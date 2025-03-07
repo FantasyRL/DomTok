@@ -21,8 +21,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 func (c *KafkaAdapter) send(ctx context.Context, msg []*kafka.Message) (err error) {

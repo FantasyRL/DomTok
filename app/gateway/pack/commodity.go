@@ -20,11 +20,11 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 
-	"github.com/west2-online/DomTok/app/gateway/model/model"
-	modelKitex "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/base"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/upyun"
+	"github.com/west2-online/domtok/app/gateway/model/model"
+	modelKitex "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/base"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/upyun"
 )
 
 func BuildFileDataBytes(file *multipart.FileHeader) ([]byte, error) {

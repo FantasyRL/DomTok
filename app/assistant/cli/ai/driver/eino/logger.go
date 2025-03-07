@@ -25,8 +25,8 @@ import (
 	"github.com/cloudwego/eino/schema"
 	"go.uber.org/zap"
 
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 type LoggerCallback struct {

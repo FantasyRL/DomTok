@@ -22,16 +22,16 @@ import (
 	"github.com/samber/lo"
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	"github.com/west2-online/DomTok/app/cart/domain/repository"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	"github.com/west2-online/DomTok/kitex_gen/commodity/commodityservice"
-	kmodel "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/kitex_gen/order"
-	"github.com/west2-online/DomTok/kitex_gen/order/orderservice"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	"github.com/west2-online/domtok/app/cart/domain/repository"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/kitex_gen/commodity/commodityservice"
+	kmodel "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/kitex_gen/order"
+	"github.com/west2-online/domtok/kitex_gen/order/orderservice"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 type CartRpcImpl struct {

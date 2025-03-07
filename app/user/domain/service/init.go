@@ -19,8 +19,8 @@ package service
 import (
 	"regexp"
 
-	"github.com/west2-online/DomTok/app/user/domain/repository"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/user/domain/repository"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 type UserService struct {

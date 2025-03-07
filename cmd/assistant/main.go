@@ -23,17 +23,17 @@ import (
 	"github.com/cloudwego/eino/components/model"
 	"github.com/cloudwego/hertz/pkg/app/server"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino"
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
-	"github.com/west2-online/DomTok/app/assistant/cli/server/driver/http"
-	"github.com/west2-online/DomTok/app/assistant/router"
-	"github.com/west2-online/DomTok/app/assistant/service"
-	"github.com/west2-online/DomTok/app/gateway/mw"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/base"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/assistant/cli/server/driver/http"
+	"github.com/west2-online/domtok/app/assistant/router"
+	"github.com/west2-online/domtok/app/assistant/service"
+	"github.com/west2-online/domtok/app/gateway/mw"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/base"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 var serviceName = constants.AssistantServiceName

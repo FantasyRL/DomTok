@@ -22,9 +22,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 // UploadImg 又拍云上传文件

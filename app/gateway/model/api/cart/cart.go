@@ -24,7 +24,7 @@ import (
 
 	"github.com/apache/thrift/lib/go/thrift"
 
-	"github.com/west2-online/DomTok/app/gateway/model/model"
+	"github.com/west2-online/domtok/app/gateway/model/model"
 )
 
 /* struct AddGoodsIntoCartRequest 将商品添加到购物车，暴露

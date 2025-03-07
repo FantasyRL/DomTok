@@ -22,12 +22,12 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/kafka"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func initTest(t *testing.T) repository.CommodityMQ {

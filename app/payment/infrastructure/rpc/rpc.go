@@ -19,13 +19,13 @@ package rpc
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/payment/domain/repository"
-	orderrpc "github.com/west2-online/DomTok/kitex_gen/order"
-	"github.com/west2-online/DomTok/kitex_gen/order/orderservice"
-	userrpc "github.com/west2-online/DomTok/kitex_gen/user"
-	"github.com/west2-online/DomTok/kitex_gen/user/userservice"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/payment/domain/repository"
+	orderrpc "github.com/west2-online/domtok/kitex_gen/order"
+	"github.com/west2-online/domtok/kitex_gen/order/orderservice"
+	userrpc "github.com/west2-online/domtok/kitex_gen/user"
+	"github.com/west2-online/domtok/kitex_gen/user/userservice"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 type paymentRPC struct {

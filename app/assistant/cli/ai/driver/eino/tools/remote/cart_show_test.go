@@ -26,8 +26,8 @@ import (
 	"github.com/bytedance/sonic"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
-	"github.com/west2-online/DomTok/app/gateway/model/api/cart"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/gateway/model/api/cart"
 )
 
 func TestToolCartShow_InvokableRun(t *testing.T) {

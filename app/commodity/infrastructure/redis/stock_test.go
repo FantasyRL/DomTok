@@ -23,7 +23,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func TestCommodityCache_Stock(t *testing.T) {

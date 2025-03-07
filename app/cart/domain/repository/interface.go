@@ -19,8 +19,8 @@ package repository
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 type PersistencePort interface {

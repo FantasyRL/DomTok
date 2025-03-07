@@ -25,7 +25,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/gateway/model/api/order"
+	"github.com/west2-online/domtok/app/gateway/model/api/order"
 )
 
 func TestClient_OrderList(t *testing.T) {

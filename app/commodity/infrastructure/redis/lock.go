@@ -22,8 +22,8 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func (c *commodityCache) IsHealthy(ctx context.Context) error {

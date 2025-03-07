@@ -19,9 +19,9 @@ package service
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 // SkuLockStockRollback 只负责进行回滚，如果订单被完成那应该由 payment 的 msg 或者直接调用 rpc 来对订单进行更改

@@ -20,7 +20,7 @@ package orderservice
 import (
 	server "github.com/cloudwego/kitex/server"
 
-	order "github.com/west2-online/DomTok/kitex_gen/order"
+	order "github.com/west2-online/domtok/kitex_gen/order"
 )
 
 // NewServer creates a server.Server with the given handler and options.

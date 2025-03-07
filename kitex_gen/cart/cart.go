@@ -22,7 +22,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/kitex_gen/model"
+	"github.com/west2-online/domtok/kitex_gen/model"
 )
 
 type AddGoodsIntoCartRequest struct {

@@ -23,11 +23,11 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/rlog"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/app/order/domain/repository"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/domain/repository"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func initTest(t *testing.T) repository.MQ {

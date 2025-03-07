@@ -25,12 +25,12 @@ import (
 	"github.com/bytedance/mockey"
 	"github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	"github.com/west2-online/DomTok/app/cart/domain/service"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/db"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/mq"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/rpc"
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	"github.com/west2-online/domtok/app/cart/domain/service"
+	"github.com/west2-online/domtok/app/cart/infrastructure/db"
+	"github.com/west2-online/domtok/app/cart/infrastructure/mq"
+	"github.com/west2-online/domtok/app/cart/infrastructure/rpc"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
 )
 
 func TestUseCase_AddGoodsIntoCart(t *testing.T) {

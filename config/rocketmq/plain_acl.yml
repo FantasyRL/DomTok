@@ -6,6 +6,6 @@ globalWhiteRemoteAddresses:
 
 # accounts 部分定义了不同的账户及其相关权限配置
 accounts:
-  - accessKey: DomTok  # 账户的访问密钥
-    secretKey: DomTok  # 该账户的秘密密钥
+  - accessKey: domtok  # 账户的访问密钥
+    secretKey: domtok  # 该账户的秘密密钥
     admin: true  # 该账户为管理员账户，拥有访问所有资源的权限

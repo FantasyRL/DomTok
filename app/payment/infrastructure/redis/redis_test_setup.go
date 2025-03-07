@@ -21,9 +21,9 @@ import (
 
 	"github.com/redis/go-redis/v9"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 var _cli *paymentRedis

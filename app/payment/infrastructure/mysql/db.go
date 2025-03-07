@@ -22,11 +22,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
-	"github.com/west2-online/DomTok/app/payment/domain/repository"
-	"github.com/west2-online/DomTok/pkg/constants"
-	paymentStatus "github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/payment/domain/model"
+	"github.com/west2-online/domtok/app/payment/domain/repository"
+	"github.com/west2-online/domtok/pkg/constants"
+	paymentStatus "github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // paymentDB impl domain.PaymentDB defined domain

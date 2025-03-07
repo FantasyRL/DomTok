@@ -19,9 +19,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/app/order/domain/repository"
-	"github.com/west2-online/DomTok/app/order/domain/service"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/domain/repository"
+	"github.com/west2-online/domtok/app/order/domain/service"
 )
 
 // OrderUseCase 定义在 usecase 层的接口

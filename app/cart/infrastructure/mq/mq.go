@@ -19,7 +19,7 @@ package mq
 import (
 	"sync/atomic"
 
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 // KafkaAdapter 这里不是mqAdapter的原因是我们调用的是在pkg封装的kafka

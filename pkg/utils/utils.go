@@ -30,10 +30,10 @@ import (
 	"github.com/h2non/filetype/types"
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 const DefaultFilePermissions = 0o666 // 默认文件权限

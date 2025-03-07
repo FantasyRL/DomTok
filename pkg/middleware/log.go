@@ -24,9 +24,9 @@ import (
 	"github.com/cloudwego/kitex/pkg/endpoint"
 	"go.uber.org/zap"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 // ErrorLog WARNING: 如果使用该中间件, 请务必注册于 Respond 之前

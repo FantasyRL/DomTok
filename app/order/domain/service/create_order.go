@@ -26,11 +26,11 @@ import (
 	"github.com/samber/lo"
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	basecontext "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	basecontext "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 func (svc *OrderService) CreateOrder(ctx context.Context, order *model.Order, goods []*model.OrderGoods) error {
