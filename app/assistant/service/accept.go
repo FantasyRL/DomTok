@@ -24,9 +24,9 @@ import (
 
 	"github.com/hertz-contrib/websocket"
 
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/app/assistant/pack"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/app/assistant/pack"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 var busy = sync.Map{}

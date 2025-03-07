@@ -21,11 +21,11 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/west2-online/DomTok/app/order/controllers/rpc/pack"
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/app/order/usecase"
-	idlmodel "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/kitex_gen/order"
+	"github.com/west2-online/domtok/app/order/controllers/rpc/pack"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/usecase"
+	idlmodel "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/kitex_gen/order"
 )
 
 type OrderHandler struct {

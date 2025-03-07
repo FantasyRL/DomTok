@@ -19,9 +19,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
-	"github.com/west2-online/DomTok/app/payment/domain/repository"
-	"github.com/west2-online/DomTok/app/payment/domain/service"
+	"github.com/west2-online/domtok/app/payment/domain/model"
+	"github.com/west2-online/domtok/app/payment/domain/repository"
+	"github.com/west2-online/domtok/app/payment/domain/service"
 )
 
 // PaymentUseCase 这里写的是最大的大方法内的中等方法

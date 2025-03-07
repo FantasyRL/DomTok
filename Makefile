@@ -13,9 +13,9 @@
 # 检查 tmux 是否存在
 TMUX_EXISTS := $(shell command -v tmux)
 # 远程仓库
-REMOTE_REPOSITORY = registry.cn-hangzhou.aliyuncs.com/west2-online/DomTok
+REMOTE_REPOSITORY = registry.cn-hangzhou.aliyuncs.com/west2-online/domtok
 # 项目 MODULE 名
-MODULE = github.com/west2-online/DomTok
+MODULE = github.com/west2-online/domtok
 # 当前架构
 ARCH := $(shell uname -m)
 PREFIX = "[Makefile]"
@@ -34,7 +34,7 @@ ES_ANALYSIS = domtok-elasticsearch
 SERVICES := gateway user commodity order cart payment assistant
 service = $(word 1, $@)
 
-EnvironmentStartEnv=DOMTOK_ENVIRONMENT_STARTED
+EnvironmentStartEnv=domtok_ENVIRONMENT_STARTED
 EnvironmentStartFlag=true
 EtcdAddrEnv=ETCD_ADDR
 EtcdAddr=127.0.0.1:2379
@@ -241,5 +241,5 @@ with-env-up-%:
       	cd ${DIR}/app/$*/infrastructure && go test -v ./...
 
 # 手动暴露环境变量
-#export DOMTOK_ENVIRONMENT_STARTED=true
+#export domtok_ENVIRONMENT_STARTED=true
 #export ETCD_ADDR=127.0.0.1:2379

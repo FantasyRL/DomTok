@@ -20,8 +20,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
 )
 
 func (u *UseCase) AddGoodsIntoCart(ctx context.Context, goods *model.GoodInfo) (err error) {

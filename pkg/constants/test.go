@@ -17,7 +17,7 @@ limitations under the License.
 package constants
 
 const (
-	EnvironmentStartEnv  = "DOMTOK_ENVIRONMENT_STARTED"
+	EnvironmentStartEnv  = "domtok_ENVIRONMENT_STARTED"
 	EnvironmentStartFlag = "true"
 
 	EtcdEnv = "ETCD_ADDR"

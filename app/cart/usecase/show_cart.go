@@ -22,8 +22,8 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
 )
 
 func (u *UseCase) ShowCartGoods(ctx context.Context, pageNum int64) ([]*model.CartGoods, error) {

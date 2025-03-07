@@ -28,7 +28,7 @@ import (
 	streaming "github.com/cloudwego/kitex/pkg/streaming"
 	transport "github.com/cloudwego/kitex/transport"
 
-	commodity "github.com/west2-online/DomTok/kitex_gen/commodity"
+	commodity "github.com/west2-online/domtok/kitex_gen/commodity"
 )
 
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.

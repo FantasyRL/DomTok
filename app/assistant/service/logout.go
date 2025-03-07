@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/assistant/model"
+	"github.com/west2-online/domtok/app/assistant/model"
 )
 
 // Logout logs out the user

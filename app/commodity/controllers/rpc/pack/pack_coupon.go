@@ -17,9 +17,9 @@ limitations under the License.
 package pack
 
 import (
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	modelKitex "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/base"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	modelKitex "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/base"
 )
 
 func BuildCoupon(coupon *model.Coupon) *modelKitex.Coupon {

@@ -20,7 +20,7 @@ import (
 	"math/rand/v2"
 	"testing"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
 )
 
 func buildTestSpu(t *testing.T, creatorId int64) *model.Spu {

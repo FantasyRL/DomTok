@@ -22,11 +22,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/west2-online/DomTok/app/commodity/controllers/rpc/pack"
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/usecase"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	"github.com/west2-online/DomTok/pkg/base"
+	"github.com/west2-online/domtok/app/commodity/controllers/rpc/pack"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/usecase"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/pkg/base"
 )
 
 type CommodityHandler struct {

@@ -17,8 +17,8 @@ limitations under the License.
 package pack
 
 import (
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 type _ResponseFactory struct{}

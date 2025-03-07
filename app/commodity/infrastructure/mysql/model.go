@@ -21,7 +21,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type Category struct {

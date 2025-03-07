@@ -27,7 +27,7 @@ import (
 	kitex "github.com/cloudwego/kitex/pkg/serviceinfo"
 	streaming "github.com/cloudwego/kitex/pkg/streaming"
 
-	commodity "github.com/west2-online/DomTok/kitex_gen/commodity"
+	commodity "github.com/west2-online/domtok/kitex_gen/commodity"
 )
 
 var errInvalidMessageType = errors.New("invalid message type for service method handler")

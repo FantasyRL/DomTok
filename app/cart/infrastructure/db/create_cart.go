@@ -19,7 +19,7 @@ package db
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // CreateCart 创建购物车

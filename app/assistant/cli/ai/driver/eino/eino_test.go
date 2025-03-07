@@ -31,8 +31,8 @@ import (
 	"github.com/cloudwego/eino/schema"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
-	"github.com/west2-online/DomTok/app/assistant/model"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/assistant/model"
 )
 
 func ReceiveDialog(dialog *model.Dialog, timeout time.Duration, cancel context.CancelFunc,

@@ -22,9 +22,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
-	"github.com/west2-online/DomTok/app/user/domain/repository"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/user/domain/model"
+	"github.com/west2-online/domtok/app/user/domain/repository"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // userDB impl domain.UserDB defined domain

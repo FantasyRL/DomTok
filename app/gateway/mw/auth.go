@@ -21,10 +21,10 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 
-	"github.com/west2-online/DomTok/app/gateway/pack"
-	metainfoContext "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/gateway/pack"
+	metainfoContext "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // Auth 负责校验用户身份，会提取 token 并做处理，Next 时会携带 token 类型

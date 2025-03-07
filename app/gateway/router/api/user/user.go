@@ -21,7 +21,7 @@ package user
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 
-	user "github.com/west2-online/DomTok/app/gateway/handler/api/user"
+	user "github.com/west2-online/domtok/app/gateway/handler/api/user"
 )
 
 /*

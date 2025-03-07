@@ -21,14 +21,14 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app/server"
 
-	"github.com/west2-online/DomTok/app/gateway/mw"
-	"github.com/west2-online/DomTok/app/gateway/router"
-	"github.com/west2-online/DomTok/app/gateway/rpc"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/base"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/gateway/mw"
+	"github.com/west2-online/domtok/app/gateway/router"
+	"github.com/west2-online/domtok/app/gateway/rpc"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/base"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 var serviceName = constants.GatewayServiceName

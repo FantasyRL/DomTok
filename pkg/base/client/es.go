@@ -25,8 +25,8 @@ import (
 	"github.com/elastic/go-elasticsearch/esapi"
 	"github.com/olivere/elastic/v7"
 
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func NewEsClient() (*elasticsearch.Client, error) {

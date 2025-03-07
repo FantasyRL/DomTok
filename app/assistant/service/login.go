@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // Login logs in the user

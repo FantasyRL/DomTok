@@ -24,7 +24,7 @@ import (
 	. "github.com/bytedance/mockey"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func errorLogNext(ctx context.Context, req, resp interface{}) (err error) {

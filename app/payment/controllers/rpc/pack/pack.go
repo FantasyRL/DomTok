@@ -17,7 +17,7 @@ limitations under the License.
 package pack
 
 import (
-	"github.com/west2-online/DomTok/kitex_gen/model"
+	"github.com/west2-online/domtok/kitex_gen/model"
 )
 
 // BuildTokenInfo  BuildUser 将 entities 定义的 Payment 实体转换成 idl 定义的 RPC 交流实体，类似 dto

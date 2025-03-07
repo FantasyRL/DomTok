@@ -22,7 +22,7 @@ import (
 	. "github.com/bytedance/mockey"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/adapter"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/adapter"
 )
 
 func TestUse(t *testing.T) {

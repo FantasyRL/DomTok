@@ -21,7 +21,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type MysqlLogger struct{}

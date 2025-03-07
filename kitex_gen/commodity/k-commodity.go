@@ -26,7 +26,7 @@ import (
 
 	"github.com/cloudwego/gopkg/protocol/thrift"
 
-	"github.com/west2-online/DomTok/kitex_gen/model"
+	"github.com/west2-online/domtok/kitex_gen/model"
 )
 
 var (

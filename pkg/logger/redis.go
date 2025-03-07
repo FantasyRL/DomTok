@@ -25,7 +25,7 @@ import (
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 // RedisLogger 不加入自定义的 logger 字段, 以使得 logger 更新后无指针引用

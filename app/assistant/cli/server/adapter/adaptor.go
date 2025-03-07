@@ -19,8 +19,8 @@ package adapter
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/gateway/model/api/cart"
-	"github.com/west2-online/DomTok/app/gateway/model/api/order"
+	"github.com/west2-online/domtok/app/gateway/model/api/cart"
+	"github.com/west2-online/domtok/app/gateway/model/api/order"
 )
 
 // ServerCaller is the interface for calling the server

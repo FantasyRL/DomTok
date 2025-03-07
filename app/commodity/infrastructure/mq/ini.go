@@ -19,8 +19,8 @@ package mq
 import (
 	"sync/atomic"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/repository"
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/app/commodity/domain/repository"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 type CommodityMQ struct {

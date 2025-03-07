@@ -16,7 +16,7 @@ limitations under the License.
 
 package service
 
-import "github.com/west2-online/DomTok/app/assistant/cli/ai/adapter"
+import "github.com/west2-online/domtok/app/assistant/cli/ai/adapter"
 
 // Use sets the ai adapter to be used by the service
 // Goland 索引老是出错

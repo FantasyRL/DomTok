@@ -17,8 +17,8 @@ limitations under the License.
 package service
 
 import (
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/adapter"
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/adapter"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type Core struct {

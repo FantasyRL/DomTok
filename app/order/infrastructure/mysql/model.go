@@ -20,8 +20,8 @@ import (
 	"github.com/shopspring/decimal"
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type Order struct {

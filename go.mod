@@ -1,4 +1,4 @@
-module github.com/west2-online/DomTok
+module github.com/west2-online/domtok
 
 go 1.23.6
 

@@ -26,12 +26,12 @@ import (
 	"github.com/smartystreets/goconvey/convey"
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/payment/domain/model"
-	"github.com/west2-online/DomTok/app/payment/domain/repository"
-	"github.com/west2-online/DomTok/app/payment/domain/service"
-	"github.com/west2-online/DomTok/app/payment/infrastructure/mysql"
-	paymentStatus "github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/payment/domain/model"
+	"github.com/west2-online/domtok/app/payment/domain/repository"
+	"github.com/west2-online/domtok/app/payment/domain/service"
+	"github.com/west2-online/domtok/app/payment/infrastructure/mysql"
+	paymentStatus "github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func TestPaymentUseCase_GetPaymentToken(t *testing.T) {

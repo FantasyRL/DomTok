@@ -23,13 +23,13 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 
-	api "github.com/west2-online/DomTok/app/gateway/model/api/user"
-	"github.com/west2-online/DomTok/app/gateway/pack"
-	"github.com/west2-online/DomTok/app/gateway/rpc"
-	"github.com/west2-online/DomTok/kitex_gen/user"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/utils"
+	api "github.com/west2-online/domtok/app/gateway/model/api/user"
+	"github.com/west2-online/domtok/app/gateway/pack"
+	"github.com/west2-online/domtok/app/gateway/rpc"
+	"github.com/west2-online/domtok/kitex_gen/user"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // Register .

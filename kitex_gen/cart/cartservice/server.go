@@ -20,7 +20,7 @@ package cartservice
 import (
 	server "github.com/cloudwego/kitex/server"
 
-	cart "github.com/west2-online/DomTok/kitex_gen/cart"
+	cart "github.com/west2-online/domtok/kitex_gen/cart"
 )
 
 // NewServer creates a server.Server with the given handler and options.

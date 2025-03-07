@@ -19,10 +19,10 @@ package pack
 import (
 	"strconv"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	idlmodel "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	idlmodel "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func BuildOrder(o *model.Order) *idlmodel.Order {

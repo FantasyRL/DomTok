@@ -24,8 +24,8 @@ import (
 	"github.com/spf13/viper"
 	_ "github.com/spf13/viper/remote"
 
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 var (

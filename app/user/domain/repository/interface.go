@@ -19,7 +19,7 @@ package repository
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
+	"github.com/west2-online/domtok/app/user/domain/model"
 )
 
 // domain中的 repository 表示 service / use case 所依赖的外部资源，比如数据库、缓存等

@@ -24,9 +24,9 @@ import (
 	"github.com/samber/lo"
 	kafkago "github.com/segmentio/kafka-go"
 
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 type Kafka struct {

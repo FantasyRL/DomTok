@@ -20,7 +20,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/west2-online/DomTok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/kafka"
 )
 
 func (c *CommodityMQ) Send(ctx context.Context, topic string, message []*kafka.Message) error {

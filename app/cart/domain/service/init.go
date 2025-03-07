@@ -19,7 +19,7 @@ package service
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/cart/domain/repository"
+	"github.com/west2-online/domtok/app/cart/domain/repository"
 )
 
 type CartService struct {

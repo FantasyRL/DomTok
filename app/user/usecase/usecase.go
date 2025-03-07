@@ -19,9 +19,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
-	"github.com/west2-online/DomTok/app/user/domain/repository"
-	"github.com/west2-online/DomTok/app/user/domain/service"
+	"github.com/west2-online/domtok/app/user/domain/model"
+	"github.com/west2-online/domtok/app/user/domain/repository"
+	"github.com/west2-online/domtok/app/user/domain/service"
 )
 
 // UserUseCase 接口应该不应该定义在 domain 中，这属于 use case 层

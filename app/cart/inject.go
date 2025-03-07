@@ -17,18 +17,18 @@ limitations under the License.
 package cart
 
 import (
-	"github.com/west2-online/DomTok/app/cart/controllers/rpc"
-	"github.com/west2-online/DomTok/app/cart/domain/service"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/cache"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/db"
-	"github.com/west2-online/DomTok/app/cart/infrastructure/mq"
-	rpccli "github.com/west2-online/DomTok/app/cart/infrastructure/rpc"
-	"github.com/west2-online/DomTok/app/cart/usecase"
-	"github.com/west2-online/DomTok/kitex_gen/cart"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/kafka"
-	"github.com/west2-online/DomTok/pkg/logger"
+	"github.com/west2-online/domtok/app/cart/controllers/rpc"
+	"github.com/west2-online/domtok/app/cart/domain/service"
+	"github.com/west2-online/domtok/app/cart/infrastructure/cache"
+	"github.com/west2-online/domtok/app/cart/infrastructure/db"
+	"github.com/west2-online/domtok/app/cart/infrastructure/mq"
+	rpccli "github.com/west2-online/domtok/app/cart/infrastructure/rpc"
+	"github.com/west2-online/domtok/app/cart/usecase"
+	"github.com/west2-online/domtok/kitex_gen/cart"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/kafka"
+	"github.com/west2-online/domtok/pkg/logger"
 )
 
 // InjectCartHandler 注入外部调用

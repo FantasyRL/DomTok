@@ -24,8 +24,8 @@ import (
 	. "github.com/bytedance/mockey"
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 type respondResp struct {

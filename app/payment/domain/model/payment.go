@@ -19,7 +19,7 @@ package model
 import (
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 // PaymentOrder 支付订单表（删除了三个时间）

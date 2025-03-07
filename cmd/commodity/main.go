@@ -26,13 +26,13 @@ import (
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 
-	"github.com/west2-online/DomTok/app/commodity"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/commodity/commodityservice"
-	"github.com/west2-online/DomTok/pkg/base"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/commodity/commodityservice"
+	"github.com/west2-online/domtok/pkg/base"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // constants部分看了其他的pr有写了，防止冲突先找个数代替，到时候合并完再改掉

@@ -27,14 +27,14 @@ import (
 	"github.com/smartystreets/goconvey/convey"
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/app/commodity/domain/service"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/es"
-	"github.com/west2-online/DomTok/app/commodity/infrastructure/mysql"
-	redisCommodity "github.com/west2-online/DomTok/app/commodity/infrastructure/redis"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	"github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/app/commodity/domain/service"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/es"
+	"github.com/west2-online/domtok/app/commodity/infrastructure/mysql"
+	redisCommodity "github.com/west2-online/domtok/app/commodity/infrastructure/redis"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	"github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func TestUseCase_CreateSpu(t *testing.T) {

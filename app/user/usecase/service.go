@@ -20,8 +20,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/user/domain/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // Login 用户登录

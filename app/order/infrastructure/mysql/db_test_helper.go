@@ -23,7 +23,7 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/domain/model"
 )
 
 func buildTestModelOrder(t *testing.T) *model.Order {

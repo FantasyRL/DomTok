@@ -19,9 +19,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	"github.com/west2-online/DomTok/app/cart/domain/repository"
-	"github.com/west2-online/DomTok/app/cart/domain/service"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	"github.com/west2-online/domtok/app/cart/domain/repository"
+	"github.com/west2-online/domtok/app/cart/domain/service"
 )
 
 type CartCasePort interface {

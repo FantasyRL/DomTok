@@ -23,13 +23,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
-	"github.com/west2-online/DomTok/app/user/domain/service"
-	"github.com/west2-online/DomTok/app/user/usecase"
-	"github.com/west2-online/DomTok/app/user/usecase/mocks"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/user/domain/model"
+	"github.com/west2-online/domtok/app/user/domain/service"
+	"github.com/west2-online/domtok/app/user/usecase"
+	"github.com/west2-online/domtok/app/user/usecase/mocks"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func TestUseCase_RegisterUser(t *testing.T) {

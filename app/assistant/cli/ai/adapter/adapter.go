@@ -19,8 +19,8 @@ package adapter
 import (
 	"context"
 
-	strategy "github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino/model"
-	"github.com/west2-online/DomTok/app/assistant/model"
+	strategy "github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino/model"
+	"github.com/west2-online/domtok/app/assistant/model"
 )
 
 // AIClient is the interface for calling the AI

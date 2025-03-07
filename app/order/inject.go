@@ -17,20 +17,20 @@ limitations under the License.
 package order
 
 import (
-	"github.com/west2-online/DomTok/app/order/controllers/rpc"
-	"github.com/west2-online/DomTok/app/order/domain/service"
-	"github.com/west2-online/DomTok/app/order/infrastructure/locker"
-	"github.com/west2-online/DomTok/app/order/infrastructure/mq"
-	"github.com/west2-online/DomTok/app/order/infrastructure/mysql"
-	"github.com/west2-online/DomTok/app/order/infrastructure/redis"
-	rpcimpl "github.com/west2-online/DomTok/app/order/infrastructure/rpc"
-	"github.com/west2-online/DomTok/app/order/usecase"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/order"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/logger"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/order/controllers/rpc"
+	"github.com/west2-online/domtok/app/order/domain/service"
+	"github.com/west2-online/domtok/app/order/infrastructure/locker"
+	"github.com/west2-online/domtok/app/order/infrastructure/mq"
+	"github.com/west2-online/domtok/app/order/infrastructure/mysql"
+	"github.com/west2-online/domtok/app/order/infrastructure/redis"
+	rpcimpl "github.com/west2-online/domtok/app/order/infrastructure/rpc"
+	"github.com/west2-online/domtok/app/order/usecase"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/order"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/logger"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // InjectOrderHandler 用于依赖注入

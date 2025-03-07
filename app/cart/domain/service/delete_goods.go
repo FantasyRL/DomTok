@@ -22,7 +22,7 @@ import (
 
 	"github.com/bytedance/sonic"
 
-	"github.com/west2-online/DomTok/app/cart/domain/model"
+	"github.com/west2-online/domtok/app/cart/domain/model"
 )
 
 func (svc *CartService) DeleteGoods(ctx context.Context, uid int64, info []*model.GoodInfo) error {

@@ -21,12 +21,12 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/west2-online/DomTok/app/cart/controllers/rpc/pack"
-	"github.com/west2-online/DomTok/app/cart/domain/model"
-	"github.com/west2-online/DomTok/app/cart/usecase"
-	"github.com/west2-online/DomTok/kitex_gen/cart"
-	idlmodel "github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/base"
+	"github.com/west2-online/domtok/app/cart/controllers/rpc/pack"
+	"github.com/west2-online/domtok/app/cart/domain/model"
+	"github.com/west2-online/domtok/app/cart/usecase"
+	"github.com/west2-online/domtok/kitex_gen/cart"
+	idlmodel "github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/base"
 )
 
 type CartHandler struct {

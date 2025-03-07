@@ -24,9 +24,9 @@ import (
 	"github.com/samber/lo"
 	"gorm.io/gorm"
 
-	"github.com/west2-online/DomTok/app/order/domain/model"
-	"github.com/west2-online/DomTok/app/order/domain/repository"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/order/domain/model"
+	"github.com/west2-online/domtok/app/order/domain/repository"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 type orderDB struct {

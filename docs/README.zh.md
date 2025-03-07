@@ -1,9 +1,9 @@
 <div align="center">
-  <h1 style="display: inline-block; vertical-align: middle;">DomTok</h1>
+  <h1 style="display: inline-block; vertical-align: middle;">domtok</h1>
 </div>
 
 ## 概述
-DomTok 是一个基于 HTTP 和 RPC 协议的简单抖音电商后端项目，采用了整洁架构和分布式架构。它使用了 Kitex、Hertz、Eino、Mysql、Redis、Etcd、Kafka、Elasticsearch、Kibana、Filebeat、Jaeger、Rocketmq、Otel - Collector、多个导出器、Prometheus、VictoriaMetrics、Cadvisor 和 Grafana 等技术。
+domtok 是一个基于 HTTP 和 RPC 协议的简单抖音电商后端项目，采用了整洁架构和分布式架构。它使用了 Kitex、Hertz、Eino、Mysql、Redis、Etcd、Kafka、Elasticsearch、Kibana、Filebeat、Jaeger、Rocketmq、Otel - Collector、多个导出器、Prometheus、VictoriaMetrics、Cadvisor 和 Grafana 等技术。
 
 ## 特性
 - 云原生：采用原生 Go 语言分布式架构设计，基于字节跳动的最佳实践。
@@ -150,6 +150,6 @@ DomTok 是一个基于 HTTP 和 RPC 协议的简单抖音电商后端项目，�
 
 ## 贡献者
 
-<a href="https://github.com/west2-online/DomTok/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=west2-online/DomTok" />
+<a href="https://github.com/west2-online/domtok/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=west2-online/domtok" />
 </a>

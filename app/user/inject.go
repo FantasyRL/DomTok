@@ -17,15 +17,15 @@ limitations under the License.
 package user
 
 import (
-	"github.com/west2-online/DomTok/app/user/controllers/rpc"
-	"github.com/west2-online/DomTok/app/user/domain/service"
-	"github.com/west2-online/DomTok/app/user/infrastructure/mysql"
-	"github.com/west2-online/DomTok/app/user/usecase"
-	"github.com/west2-online/DomTok/config"
-	"github.com/west2-online/DomTok/kitex_gen/user"
-	"github.com/west2-online/DomTok/pkg/base/client"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/user/controllers/rpc"
+	"github.com/west2-online/domtok/app/user/domain/service"
+	"github.com/west2-online/domtok/app/user/infrastructure/mysql"
+	"github.com/west2-online/domtok/app/user/usecase"
+	"github.com/west2-online/domtok/config"
+	"github.com/west2-online/domtok/kitex_gen/user"
+	"github.com/west2-online/domtok/pkg/base/client"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 // InjectUserHandler 用于依赖注入

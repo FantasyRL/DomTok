@@ -21,7 +21,7 @@ package cart
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 
-	cart "github.com/west2-online/DomTok/app/gateway/handler/api/cart"
+	cart "github.com/west2-online/domtok/app/gateway/handler/api/cart"
 )
 
 /*

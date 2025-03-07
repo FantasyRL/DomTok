@@ -28,10 +28,10 @@ import (
 	"github.com/cloudwego/eino/flow/agent/react"
 	"github.com/cloudwego/eino/schema"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/ai/adapter"
-	strategy "github.com/west2-online/DomTok/app/assistant/cli/ai/driver/eino/model"
-	"github.com/west2-online/DomTok/app/assistant/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/assistant/cli/ai/adapter"
+	strategy "github.com/west2-online/domtok/app/assistant/cli/ai/driver/eino/model"
+	"github.com/west2-online/domtok/app/assistant/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // Client is a client struct for calling the AI

@@ -21,7 +21,7 @@ import (
 
 	"github.com/cloudwego/eino/components/model"
 
-	"github.com/west2-online/DomTok/app/assistant/cli/server/adapter"
+	"github.com/west2-online/domtok/app/assistant/cli/server/adapter"
 )
 
 type GetServerCaller func(functionName string) adapter.ServerCaller

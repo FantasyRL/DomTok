@@ -28,7 +28,7 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 var (

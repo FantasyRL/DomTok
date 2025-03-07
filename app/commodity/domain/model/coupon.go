@@ -19,7 +19,7 @@ package model
 import (
 	"time"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type Coupon struct {

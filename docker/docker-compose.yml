@@ -278,10 +278,10 @@ services:
     ports:
       - "9104:9104"
     command:
-      - "--mysqld.username=DomTok:DomTok"
+      - "--mysqld.username=domtok:domtok"
       - "--mysqld.address=domtok-mysql:3306"
     environment:
-      DATA_SOURCE_NAME: 'DomTok:DomTok@(domtok-mysql:3306)/'
+      DATA_SOURCE_NAME: 'domtok:domtok@(domtok-mysql:3306)/'
     networks:
       - domtok
     depends_on:

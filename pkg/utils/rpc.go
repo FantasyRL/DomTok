@@ -19,8 +19,8 @@ package utils
 import (
 	"fmt"
 
-	"github.com/west2-online/DomTok/kitex_gen/model"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/kitex_gen/model"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 // IsSuccess 通用的rpc结果处理

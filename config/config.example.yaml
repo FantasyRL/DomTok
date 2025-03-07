@@ -8,7 +8,7 @@ server:
     MCowBQYDK2VwAyEAe8QtuyTwO7YgDmZegsPpPPGuMZkjg6209OoArIOVOz0=
     -----END PUBLIC KEY-----
   version: "1.0"
-  name: "DomTok"
+  name: "domtok"
   log-level: "INFO" # OPTIONS: TRACE, DEBUG, INFO(default), NOTICE, WARN, ERROR, FATAL
   intranet-url: "" # 网关地址
 
@@ -21,9 +21,9 @@ snowflake:
 
 mysql:
   addr: 127.0.0.1:3306
-  database: DomTok
-  username: DomTok
-  password: DomTok
+  database: domtok
+  username: domtok
+  password: domtok
   charset: utf8mb4
 
 oss:
@@ -31,7 +31,7 @@ oss:
   accessKey-id: ""
   accessKey-secret: ""
   bucketname: ""
-  main-directory: DomTok
+  main-directory: domtok
 
 elasticsearch:
   addr: 127.0.0.1:9200
@@ -39,7 +39,7 @@ elasticsearch:
 
 redis:
   addr: 127.0.0.1:6379
-  password: DomTok
+  password: domtok
 
 jaeger:
   addr: 127.0.0.1:6831
@@ -68,8 +68,8 @@ upyun:
 rocketmq:
   brokerAddr: 127.0.0.1:10911 # 端口定义于 ../docker/docker=-compose.yml
   nameSrvAddr: 127.0.0.1:9876 # 同上
-  accessKey: DomTok # 定义于 ./rocketmq/plain_acl.yml
-  secretKey: DomTok # 同上
+  accessKey: domtok # 定义于 ./rocketmq/plain_acl.yml
+  secretKey: domtok # 同上
 
 otel:
   collector-addr: 127.0.0.1:4317

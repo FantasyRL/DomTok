@@ -24,7 +24,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/klog"
 	"go.uber.org/zap"
 
-	"github.com/west2-online/DomTok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/constants"
 )
 
 type KlogLogger struct{}

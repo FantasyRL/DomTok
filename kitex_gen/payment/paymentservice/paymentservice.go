@@ -25,7 +25,7 @@ import (
 	client "github.com/cloudwego/kitex/client"
 	kitex "github.com/cloudwego/kitex/pkg/serviceinfo"
 
-	payment "github.com/west2-online/DomTok/kitex_gen/payment"
+	payment "github.com/west2-online/domtok/kitex_gen/payment"
 )
 
 var errInvalidMessageType = errors.New("invalid message type for service method handler")

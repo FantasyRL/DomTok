@@ -17,8 +17,8 @@ limitations under the License.
 package service
 
 import (
-	"github.com/west2-online/DomTok/app/payment/domain/repository"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/payment/domain/repository"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 type PaymentService struct {

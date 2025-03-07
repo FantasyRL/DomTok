@@ -20,12 +20,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/west2-online/DomTok/app/commodity/domain/model"
-	"github.com/west2-online/DomTok/kitex_gen/commodity"
-	contextLogin "github.com/west2-online/DomTok/pkg/base/context"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
-	"github.com/west2-online/DomTok/pkg/utils"
+	"github.com/west2-online/domtok/app/commodity/domain/model"
+	"github.com/west2-online/domtok/kitex_gen/commodity"
+	contextLogin "github.com/west2-online/domtok/pkg/base/context"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
+	"github.com/west2-online/domtok/pkg/utils"
 )
 
 func (uc *useCase) CreateCategory(ctx context.Context, category *model.Category) (int64, error) {

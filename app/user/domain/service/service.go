@@ -22,9 +22,9 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/west2-online/DomTok/app/user/domain/model"
-	"github.com/west2-online/DomTok/pkg/constants"
-	"github.com/west2-online/DomTok/pkg/errno"
+	"github.com/west2-online/domtok/app/user/domain/model"
+	"github.com/west2-online/domtok/pkg/constants"
+	"github.com/west2-online/domtok/pkg/errno"
 )
 
 func (svc *UserService) EncryptPassword(pwd string) (string, error) {
