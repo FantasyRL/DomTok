@@ -13,7 +13,7 @@
 # 检查 tmux 是否存在
 TMUX_EXISTS := $(shell command -v tmux)
 # 远程仓库
-REMOTE_REPOSITORY = registry.cn-hangzhou.aliyuncs.com/halcyr/domtok
+REMOTE_REPOSITORY = registry.cn-hangzhou.aliyuncs.com/fanr/domtok
 # 项目 MODULE 名
 MODULE = github.com/west2-online/domtok
 # 当前架构
