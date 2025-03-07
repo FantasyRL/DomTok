@@ -7,7 +7,7 @@ ARG SERVICE
 ENV TZ=Asia/Shanghai
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
-ENV GOPROXY=https://proxy.golang.org,direct
+ENV GOPROXY=https://goproxy.io,https://goproxy.cn,direct
 ENV GOOS=linux
 ENV GOARCH=amd64
 # 创建工作目录c
@@ -20,8 +20,9 @@ WORKDIR /app
 COPY . .
 
 # 下载依赖
-RUN go mod tidy
-
+#RUN go mod tidy
+ENV GOFLAGS="-mod=vendor"
+RUN go mod verify
 # 编译应用程序
 RUN bash ./docker/script/build.sh ${SERVICE}
 
