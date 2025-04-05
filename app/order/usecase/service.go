@@ -26,7 +26,7 @@ import (
 	"github.com/west2-online/domtok/pkg/utils"
 )
 
-func (uc *useCase) CreateOrder(ctx context.Context, addressID int64, baseGoods []*model.BaseOrderGoods) (int64, error) {
+func (uc *UseCase) CreateOrder(ctx context.Context, addressID int64, baseGoods []*model.BaseOrderGoods) (int64, error) {
 	if err := uc.svc.Verify(uc.svc.VerifyAddressID(addressID), uc.svc.VerifyBaseOrderGoods(baseGoods)); err != nil {
 		return 0, err
 	}
@@ -58,7 +58,7 @@ func (uc *useCase) CreateOrder(ctx context.Context, addressID int64, baseGoods [
 }
 
 // ViewOrderList 获取订单列表
-func (uc *useCase) ViewOrderList(ctx context.Context, page, size int32) ([]*model.Order, [][]*model.OrderGoods, int32, error) {
+func (uc *UseCase) ViewOrderList(ctx context.Context, page, size int32) ([]*model.Order, [][]*model.OrderGoods, int32, error) {
 	// 从 RPC 上下文中获取用户ID
 	userID, err := basecontext.GetLoginData(ctx)
 	if err != nil {
@@ -69,7 +69,7 @@ func (uc *useCase) ViewOrderList(ctx context.Context, page, size int32) ([]*mode
 }
 
 // ViewOrder 获取订单详情
-func (uc *useCase) ViewOrder(ctx context.Context, orderID int64) (*model.Order, []*model.OrderGoods, error) {
+func (uc *UseCase) ViewOrder(ctx context.Context, orderID int64) (*model.Order, []*model.OrderGoods, error) {
 	if err := uc.svc.OrderExist(ctx, orderID); err != nil {
 		return nil, nil, err
 	}
@@ -83,7 +83,7 @@ func (uc *useCase) ViewOrder(ctx context.Context, orderID int64) (*model.Order, 
 }
 
 // CancelOrder 取消订单
-func (uc *useCase) CancelOrder(ctx context.Context, orderID int64) error {
+func (uc *UseCase) CancelOrder(ctx context.Context, orderID int64) error {
 	// 1. 检查订单是否存在
 	exist, _, err := uc.db.IsOrderExist(ctx, orderID)
 	if err != nil {
@@ -109,7 +109,7 @@ func (uc *useCase) CancelOrder(ctx context.Context, orderID int64) error {
 }
 
 // ChangeDeliverAddress 更改配送地址
-func (uc *useCase) ChangeDeliverAddress(ctx context.Context, orderID, addressID int64, addressInfo string) error {
+func (uc *UseCase) ChangeDeliverAddress(ctx context.Context, orderID, addressID int64, addressInfo string) error {
 	// 1. 检查订单是否存在
 	exist, _, err := uc.db.IsOrderExist(ctx, orderID)
 	if err != nil {
@@ -135,7 +135,7 @@ func (uc *useCase) ChangeDeliverAddress(ctx context.Context, orderID, addressID 
 }
 
 // DeleteOrder 删除订单
-func (uc *useCase) DeleteOrder(ctx context.Context, orderID int64) error {
+func (uc *UseCase) DeleteOrder(ctx context.Context, orderID int64) error {
 	exist, _, err := uc.db.IsOrderExist(ctx, orderID)
 	if err != nil {
 		return err
@@ -147,11 +147,11 @@ func (uc *useCase) DeleteOrder(ctx context.Context, orderID int64) error {
 	return uc.svc.DeleteOrder(ctx, orderID)
 }
 
-func (uc *useCase) IsOrderExist(ctx context.Context, orderID int64) (bool, int64, error) {
+func (uc *UseCase) IsOrderExist(ctx context.Context, orderID int64) (bool, int64, error) {
 	return uc.svc.IsOrderExist(ctx, orderID)
 }
 
-func (uc *useCase) OrderPaymentSuccess(ctx context.Context, req *model.PaymentResult) error {
+func (uc *UseCase) OrderPaymentSuccess(ctx context.Context, req *model.PaymentResult) error {
 	// 这里不进行 orderID 是否存在的检查，因为这个方法是由 payment 服务调用的，payment 在调用之前已经检查了 orderID 的存在
 	status, expired, err := uc.svc.GetPaymentStatusAndOrderExpire(ctx, req.OrderID)
 	if err != nil {
@@ -168,7 +168,7 @@ func (uc *useCase) OrderPaymentSuccess(ctx context.Context, req *model.PaymentRe
 	return nil
 }
 
-func (uc *useCase) OrderPaymentCancel(ctx context.Context, req *model.PaymentResult) error {
+func (uc *UseCase) OrderPaymentCancel(ctx context.Context, req *model.PaymentResult) error {
 	// 这里不进行 orderID 是否存在的检查，因为这个方法是由 payment 服务调用的，payment 在调用之前已经检查了 orderID 的存在
 	status, _, err := uc.svc.GetPaymentStatusAndOrderExpire(ctx, req.OrderID)
 	if err != nil {
@@ -186,7 +186,7 @@ func (uc *useCase) OrderPaymentCancel(ctx context.Context, req *model.PaymentRes
 	return nil
 }
 
-func (uc *useCase) GetOrderPaymentAmount(ctx context.Context, orderID int64) (float64, error) {
+func (uc *UseCase) GetOrderPaymentAmount(ctx context.Context, orderID int64) (float64, error) {
 	o, err := uc.db.GetOrderByID(ctx, orderID)
 	if err != nil {
 		return 0, err

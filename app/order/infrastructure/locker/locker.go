@@ -28,7 +28,7 @@ import (
 	"github.com/west2-online/domtok/pkg/errno"
 )
 
-type locker struct {
+type Locker struct {
 	rs      *redsync.Redsync
 	locks   map[int64]*redsync.Mutex
 	expires map[int64]time.Time
@@ -36,7 +36,7 @@ type locker struct {
 }
 
 func NewLocker(rs *redsync.Redsync) repository.Locker {
-	l := &locker{
+	l := &Locker{
 		rs:      rs,
 		locks:   make(map[int64]*redsync.Mutex),
 		expires: make(map[int64]time.Time),
@@ -45,7 +45,7 @@ func NewLocker(rs *redsync.Redsync) repository.Locker {
 	return l
 }
 
-func (l *locker) init() {
+func (l *Locker) init() {
 	go func() {
 		time.Sleep(constants.OrderRedSyncDefaultInterval)
 		l.mu.Lock()
@@ -60,7 +60,7 @@ func (l *locker) init() {
 	}()
 }
 
-func (l *locker) LockOrder(orderID int64) error {
+func (l *Locker) LockOrder(orderID int64) error {
 	l.mu.Lock()
 	mutex, ok := l.locks[orderID]
 	if !ok {
@@ -76,7 +76,7 @@ func (l *locker) LockOrder(orderID int64) error {
 	return nil
 }
 
-func (l *locker) UnlockOrder(orderID int64) (err error) {
+func (l *Locker) UnlockOrder(orderID int64) (err error) {
 	l.mu.Lock()
 	mutex, ok := l.locks[orderID]
 	l.mu.Unlock()

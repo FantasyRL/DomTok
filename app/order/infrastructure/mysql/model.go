@@ -74,7 +74,7 @@ func (OrderGoods) TableName() string {
 	return constants.OrderGoodsTableName
 }
 
-func (db *orderDB) order2Model(order *Order) *model.Order {
+func (db *OrderDB) order2Model(order *Order) *model.Order {
 	return &model.Order{
 		Id:                    order.Id,
 		Status:                order.Status,
@@ -96,7 +96,7 @@ func (db *orderDB) order2Model(order *Order) *model.Order {
 	}
 }
 
-func (db *orderDB) goods2Model(goods *OrderGoods) *model.OrderGoods {
+func (db *OrderDB) goods2Model(goods *OrderGoods) *model.OrderGoods {
 	return &model.OrderGoods{
 		OrderID:            goods.OrderID,
 		MerchantID:         goods.MerchantID,
@@ -120,7 +120,7 @@ func (db *orderDB) goods2Model(goods *OrderGoods) *model.OrderGoods {
 	}
 }
 
-func (db *orderDB) model2Order(order *model.Order) *Order {
+func (db *OrderDB) model2Order(order *model.Order) *Order {
 	return &Order{
 		Id:                    order.Id,
 		Status:                order.Status,
@@ -142,7 +142,7 @@ func (db *orderDB) model2Order(order *model.Order) *Order {
 	}
 }
 
-func (db *orderDB) model2Goods(goods *model.OrderGoods) *OrderGoods {
+func (db *OrderDB) model2Goods(goods *model.OrderGoods) *OrderGoods {
 	return &OrderGoods{
 		OrderID:            goods.OrderID,
 		MerchantID:         goods.MerchantID,

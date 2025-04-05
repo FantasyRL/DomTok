@@ -29,16 +29,16 @@ import (
 	"github.com/west2-online/domtok/pkg/errno"
 )
 
-type orderDB struct {
+type OrderDB struct {
 	client *gorm.DB
 }
 
 func NewOrderDB(client *gorm.DB) repository.OrderDB {
-	return &orderDB{client: client}
+	return &OrderDB{client: client}
 }
 
 // IsOrderExist 检查订单是否存在
-func (db *orderDB) IsOrderExist(ctx context.Context, orderID int64) (bool, int64, error) {
+func (db *OrderDB) IsOrderExist(ctx context.Context, orderID int64) (bool, int64, error) {
 	var t int64
 	err := db.client.WithContext(ctx).Model(&Order{}).
 		Select("ordered_at").
@@ -55,7 +55,7 @@ func (db *orderDB) IsOrderExist(ctx context.Context, orderID int64) (bool, int64
 }
 
 // CreateOrder 创建订单
-func (db *orderDB) CreateOrder(ctx context.Context, o *model.Order, gs []*model.OrderGoods) error {
+func (db *OrderDB) CreateOrder(ctx context.Context, o *model.Order, gs []*model.OrderGoods) error {
 	order := db.model2Order(o)
 	goods := lo.Map(gs, func(item *model.OrderGoods, index int) *OrderGoods {
 		return db.model2Goods(item)
@@ -73,7 +73,7 @@ func (db *orderDB) CreateOrder(ctx context.Context, o *model.Order, gs []*model.
 }
 
 // CreateOrderGoods 创建订单商品
-func (db *orderDB) CreateOrderGoods(ctx context.Context, goods []*model.OrderGoods) error {
+func (db *OrderDB) CreateOrderGoods(ctx context.Context, goods []*model.OrderGoods) error {
 	gs := lo.Map(goods, func(item *model.OrderGoods, index int) *OrderGoods {
 		return db.model2Goods(item)
 	})
@@ -85,7 +85,7 @@ func (db *orderDB) CreateOrderGoods(ctx context.Context, goods []*model.OrderGoo
 }
 
 // GetOrderByID 根据ID获取订单
-func (db *orderDB) GetOrderByID(ctx context.Context, orderID int64) (*model.Order, error) {
+func (db *OrderDB) GetOrderByID(ctx context.Context, orderID int64) (*model.Order, error) {
 	order := &Order{Id: orderID}
 
 	if err := db.client.WithContext(ctx).Model(order).First(&order).Error; err != nil {
@@ -99,7 +99,7 @@ func (db *orderDB) GetOrderByID(ctx context.Context, orderID int64) (*model.Orde
 }
 
 // GetOrderGoodsByOrderID 获取订单商品列表
-func (db *orderDB) GetOrderGoodsByOrderID(ctx context.Context, orderID int64) ([]*model.OrderGoods, error) {
+func (db *OrderDB) GetOrderGoodsByOrderID(ctx context.Context, orderID int64) ([]*model.OrderGoods, error) {
 	var goods []*OrderGoods
 	if err := db.client.WithContext(ctx).Table("order_goods").
 		Where("order_id = ?", orderID).
@@ -114,7 +114,7 @@ func (db *orderDB) GetOrderGoodsByOrderID(ctx context.Context, orderID int64) ([
 }
 
 // GetOrdersByUserID 分页获取用户订单列表
-func (db *orderDB) GetOrdersByUserID(ctx context.Context, userID int64, page, size int32) ([]*model.Order, int32, error) {
+func (db *OrderDB) GetOrdersByUserID(ctx context.Context, userID int64, page, size int32) ([]*model.Order, int32, error) {
 	var orders []*Order
 	var total int64
 
@@ -140,7 +140,7 @@ func (db *orderDB) GetOrdersByUserID(ctx context.Context, userID int64, page, si
 	return os, int32(total), nil
 }
 
-func (db *orderDB) GetOrderStatus(ctx context.Context, id int64) (int8, int64, error) {
+func (db *OrderDB) GetOrderStatus(ctx context.Context, id int64) (int8, int64, error) {
 	o := Order{Id: id}
 	if err := db.client.WithContext(ctx).Model(&o).Select("status,ordered_at").Scan(&o).Error; err != nil {
 		return 0, 0, errno.Errorf(errno.InternalDatabaseErrorCode, "mysql: failed to get order status: %v", err)
@@ -149,7 +149,7 @@ func (db *orderDB) GetOrderStatus(ctx context.Context, id int64) (int8, int64, e
 }
 
 // UpdateOrderStatus 更新订单状态
-func (db *orderDB) UpdateOrderStatus(ctx context.Context, orderID int64, status int32) error {
+func (db *OrderDB) UpdateOrderStatus(ctx context.Context, orderID int64, status int32) error {
 	if err := db.client.WithContext(ctx).Model(&Order{Id: orderID}).
 		Update("status", status).Error; err != nil {
 		return errno.Errorf(errno.InternalDatabaseErrorCode, "mysql: failed to update order status: %v", err)
@@ -158,7 +158,7 @@ func (db *orderDB) UpdateOrderStatus(ctx context.Context, orderID int64, status 
 }
 
 // UpdateOrderAddress 更新订单地址
-func (db *orderDB) UpdateOrderAddress(ctx context.Context, orderID int64, addressID int64, addressInfo string) error {
+func (db *OrderDB) UpdateOrderAddress(ctx context.Context, orderID int64, addressID int64, addressInfo string) error {
 	if err := db.client.WithContext(ctx).Model(&Order{Id: orderID}).
 		Updates(map[string]interface{}{
 			"address_id":   addressID,
@@ -170,14 +170,14 @@ func (db *orderDB) UpdateOrderAddress(ctx context.Context, orderID int64, addres
 }
 
 // DeleteOrder 删除订单
-func (db *orderDB) DeleteOrder(ctx context.Context, orderID int64) error {
+func (db *OrderDB) DeleteOrder(ctx context.Context, orderID int64) error {
 	if err := db.client.WithContext(ctx).Delete(&Order{Id: orderID}).Error; err != nil {
 		return errno.Errorf(errno.InternalDatabaseErrorCode, "mysql: failed to delete order: %v", err)
 	}
 	return nil
 }
 
-func (db *orderDB) GetOrderAndGoods(ctx context.Context, orderID int64) (*model.Order, []*model.OrderGoods, error) {
+func (db *OrderDB) GetOrderAndGoods(ctx context.Context, orderID int64) (*model.Order, []*model.OrderGoods, error) {
 	var order Order
 	var goods []OrderGoods
 
@@ -210,7 +210,7 @@ func (db *orderDB) GetOrderAndGoods(ctx context.Context, orderID int64) (*model.
 	return db.order2Model(&order), modelGoods, nil
 }
 
-func (db *orderDB) UpdatePaymentStatus(ctx context.Context, message *model.PaymentResult) error {
+func (db *OrderDB) UpdatePaymentStatus(ctx context.Context, message *model.PaymentResult) error {
 	if err := db.client.WithContext(ctx).Model(&Order{Id: message.OrderID}).
 		Updates(map[string]interface{}{
 			"status":         message.PaymentStatus,

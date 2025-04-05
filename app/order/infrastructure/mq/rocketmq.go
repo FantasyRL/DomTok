@@ -34,15 +34,15 @@ import (
 	"github.com/west2-online/domtok/pkg/logger"
 )
 
-// rocketMq 结构体封装了与 RocketMQ 交互所需的管理客户端、Broker 地址、生产者和消费者信息
-type rocketMq struct {
+// RocketMq 结构体封装了与 RocketMQ 交互所需的管理客户端、Broker 地址、生产者和消费者信息
+type RocketMq struct {
 	producers map[string]rocketmq.Producer
 	consumers []rocketmq.PushConsumer
 }
 
 func NewRocketmq() repository.MQ {
 	client.SetRocketMqLoggerLevel("ERROR")
-	mq := &rocketMq{
+	mq := &RocketMq{
 		producers: make(map[string]rocketmq.Producer),
 		consumers: make([]rocketmq.PushConsumer, 0),
 	}
@@ -55,7 +55,7 @@ func NewRocketmq() repository.MQ {
 //   - ctx: 上下文对象，用于控制操作的生命周期
 //   - topic: 消息要发送到的主题名称
 //   - msgs: 要发送的消息列表，每个消息为 *model.MqMessage 类型
-func (mq *rocketMq) SendSyncMsg(ctx context.Context, topic string, msgs ...*model.MqMessage) error {
+func (mq *RocketMq) SendSyncMsg(ctx context.Context, topic string, msgs ...*model.MqMessage) error {
 	if len(msgs) == 0 {
 		return nil
 	}
@@ -78,7 +78,7 @@ func (mq *rocketMq) SendSyncMsg(ctx context.Context, topic string, msgs ...*mode
 //   - topic: 要订阅的主题名称
 //   - pullMsgInterval: 拉取消息的时间间隔
 //   - fn: 处理消息的回调函数，接收消息体并返回布尔值表示消息是否处理成功
-func (mq *rocketMq) SubscribeTopic(ctx context.Context, topic string, pullMsgInterval time.Duration, fn func(ctx context.Context, body []byte) bool) error {
+func (mq *RocketMq) SubscribeTopic(ctx context.Context, topic string, pullMsgInterval time.Duration, fn func(ctx context.Context, body []byte) bool) error {
 	con, err := mq.getConsumer(topic, pullMsgInterval)
 	if err != nil {
 		return err
@@ -101,7 +101,7 @@ func (mq *rocketMq) SubscribeTopic(ctx context.Context, topic string, pullMsgInt
 }
 
 // Shutdown 尝试释放所有资源
-func (mq *rocketMq) Shutdown() []error {
+func (mq *RocketMq) Shutdown() []error {
 	var errs []error
 	for _, con := range mq.consumers {
 		if err := con.Shutdown(); err != nil {
@@ -127,7 +127,7 @@ func (mq *rocketMq) Shutdown() []error {
 // 返回值：
 // - rocketmq.Producer: 生产者实例
 // - error: 若启动生产者失败，返回自定义错误
-func (mq *rocketMq) getProducer(topic string) (rocketmq.Producer, error) {
+func (mq *RocketMq) getProducer(topic string) (rocketmq.Producer, error) {
 	if _, ok := mq.producers[topic]; ok {
 		return mq.producers[topic], nil
 	}
@@ -146,7 +146,7 @@ func (mq *rocketMq) getProducer(topic string) (rocketmq.Producer, error) {
 // 返回值：
 // - rocketmq.PushConsumer: 消费者实例
 // - error: 若启动消费者失败，返回自定义错误
-func (mq *rocketMq) getConsumer(topic string, pullMsgInterval time.Duration) (rocketmq.PushConsumer, error) {
+func (mq *RocketMq) getConsumer(topic string, pullMsgInterval time.Duration) (rocketmq.PushConsumer, error) {
 	con := client.GetRocketmqPushConsumer(fmt.Sprintf(constants.OrderMqConsumerGroupFormat, topic),
 		consumer.WithPullInterval(pullMsgInterval),
 		consumer.WithConsumeMessageBatchMaxSize(1),
