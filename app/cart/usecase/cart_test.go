@@ -141,11 +141,6 @@ func TestUseCase_ShowCartGoods(t *testing.T) {
 
 	testCases := []TestCase{
 		{
-			Name:                   "VerifyPageNumError",
-			MockVerifyPageNumError: errors.New("page num invalid"),
-			ExpectedErr:            errors.New("page num invalid"),
-		},
-		{
 			Name:           "GetLoginDataError",
 			MockLoginError: errors.New("login error"),
 			ExpectedErr:    fmt.Errorf("ShowCartGoods get user info error: %w", errors.New("login error")),

@@ -1,0 +1,257 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-sql
+data:
+  init.sql: |
+    CREATE TABLE `cart` (
+                               `user_id` BIGINT NOT NULL PRIMARY KEY COMMENT '用户ID',
+                               `sku_json` TEXT NOT NULL COMMENT '商品json',
+                               `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                               `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                               `deleted_at` TIMESTAMP DEFAULT NULL COMMENT '删除时间'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    CREATE TABLE `category` (
+                                `id` BIGINT NOT NULL PRIMARY KEY COMMENT '分类ID',
+                                `name` VARCHAR(255) NOT NULL COMMENT '类别名',
+                                `creator_id` BIGINT NOT NULL COMMENT '创建者ID',
+                                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                `deleted_at` TIMESTAMP COMMENT '删除时间'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `coupon_info` (
+                                   `id` BIGINT NOT NULL PRIMARY KEY COMMENT '优惠券ID',
+                                   `uid` BIGINT NOT NULL COMMENT '用户ID',
+                                   `name` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '优惠券名称',
+                                   `type_info` TINYINT NOT NULL COMMENT '1：满减券，2：满减折扣',
+                                   `condition_cost` DECIMAL(15,4) DEFAULT 0 COMMENT '用券门槛',
+                                   `discount_amount` DECIMAL(15,4) DEFAULT 0.0 COMMENT '满减金额',
+                                   `discount` DECIMAL(2,1) DEFAULT 1.0 COMMENT '折扣，例如0.8表示八折',
+                                   `range_type` TINYINT NOT NULL COMMENT '优惠券的范围 1-商品(spu_id)，2-商品类型',
+                                   `range_id` BIGINT NOT NULL COMMENT '优惠券的范围对应类型ID',
+                                   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                   `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                   `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                   `expire_time` TIMESTAMP NOT NULL COMMENT '有效期',
+                                    `deadline_for_get` TIMESTAMP NOT NULL COMMENT '可以领取该券的截止时间',
+                                   `description` VARCHAR(255) DEFAULT '' COMMENT '描述',
+                                    INDEX `idx_coupon_info_range_id` (`range_id`),
+                                    INDEX `idx_coupon_info_creator_id` (`uid`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `general_coupon_info` (
+                                   `id` BIGINT NOT NULL PRIMARY KEY COMMENT '优惠券ID',
+                                   `uid` BIGINT NOT NULL COMMENT '用户ID',
+                                   `name` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '优惠券名称',
+                                   `type_info` TINYINT NOT NULL COMMENT '1：满减券，2：满减折扣',
+                                   `condition_cost` DECIMAL(15,4) DEFAULT 0 COMMENT '用券门槛',
+                                   `discount_amount` DECIMAL(15,4) DEFAULT 0.0 COMMENT '满减金额',
+                                   `discount` DECIMAL(2,1) DEFAULT 1.0 COMMENT '折扣，例如0.8表示八折',
+                                   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                   `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                   `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                   `expire_time` TIMESTAMP NOT NULL COMMENT '有效期',
+                                   `deadline_for_get` TIMESTAMP NOT NULL COMMENT '可以领取该券的截止时间',
+                                   `description` VARCHAR(255) DEFAULT '' COMMENT '描述'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `user_coupon` (
+                                   `coupon_id` BIGINT NOT NULL COMMENT '优惠券ID',
+                                   `uid` BIGINT NOT NULL COMMENT '用户ID',
+                                   `remaining_uses` TINYINT DEFAULT 1 COMMENT '优惠券剩余的可使用次数',
+                                   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                   `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                   `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                   PRIMARY KEY (`uid`, `coupon_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `sku_info` (
+                                `id` BIGINT NOT NULL PRIMARY KEY COMMENT 'SKU ID',
+                                `creator_id` BIGINT NOT NULL COMMENT '创建者ID',
+                                `price` DECIMAL(11,4) NOT NULL COMMENT '价格',
+                                `name` VARCHAR(255) DEFAULT '' COMMENT '商品名称',
+                                `description` VARCHAR(255) DEFAULT '' COMMENT '商品规格描述',
+                                `for_sale` TINYINT NOT NULL COMMENT '是否出售 1-是, 0-否',
+                                `stock` BIGINT NOT NULL COMMENT '库存',
+                                `lock_stock` BIGINT NOT NULL COMMENT '预留库存',
+                                `history_version_id` bigint not null comment '历史版本号',
+                                `style_head_drawing` VARCHAR(512) NOT NULL COMMENT '款式头图 URL',
+                                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                INDEX `idx_user_delete_forSale` (`creator_id`, `deleted_at`, `for_sale`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `sku_sale_attr` (
+                                     `id` BIGINT NOT NULL PRIMARY KEY COMMENT '属性ID',
+                                     `sku_id` BIGINT NOT NULL COMMENT 'SKU ID',
+                                     `history_version_id` bigint not null comment 'SKU 历史版本号',
+                                     `sale_attr` VARCHAR(255) DEFAULT NULL COMMENT 'SKU属性（商品属性）',
+                                     `sale_value` VARCHAR(255) DEFAULT NULL COMMENT 'SKU属性值',
+                                     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                     `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                     INDEX `idx_skuId` (`sku_id`, `deleted_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `spu_to_sku` (
+                                  `sku_id` BIGINT NOT NULL COMMENT 'SKU ID',
+                                  `spu_id` BIGINT NOT NULL COMMENT 'SPU ID',
+                                  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                  `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                  PRIMARY KEY (`sku_id`, `spu_id`),
+                                  INDEX `idx_deleted_created` (`deleted_at`, `created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `spu_info` (
+                                `id` BIGINT NOT NULL PRIMARY KEY COMMENT 'SPU ID',
+                                `name` VARCHAR(255) NOT NULL COMMENT 'SPU名称',
+                                `creator_id` BIGINT NOT NULL COMMENT '创建者ID',
+                                `description` VARCHAR(255) DEFAULT '' COMMENT '描述',
+                                `category_id` BIGINT NOT NULL COMMENT '类别ID',
+                                `goods_head_drawing` VARCHAR(512) NOT NULL COMMENT '商品头图 URL',
+                                `price` DECIMAL(11,4) NOT NULL COMMENT '价格',
+                                `for_sale` TINYINT NOT NULL COMMENT '是否出售 1-是, 0-否',
+                                `shipping` DECIMAL(11,4) NOT NULL DEFAULT 0.0 COMMENT '运费',
+                                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                INDEX `idx_user_delete_forSale` (`creator_id`, `deleted_at`, `for_sale`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+    CREATE TABLE `sku_image` (
+                                 `id` BIGINT NOT NULL PRIMARY KEY COMMENT '图片ID',
+                                 `url` VARCHAR(512) NOT NULL COMMENT '图片URL',
+                                 `sku_id` BIGINT NOT NULL COMMENT 'SKU ID',
+                                 `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                 `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                 `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                 INDEX `idx_skuId_delete_created` (`sku_id`, `deleted_at`, `created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `spu_image` (
+                                 `id` BIGINT NOT NULL PRIMARY KEY COMMENT '图片ID',
+                                 `url` VARCHAR(255) NOT NULL COMMENT '图片URL',
+                                 `spu_id` BIGINT NOT NULL COMMENT 'SPU ID',
+                                 `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                 `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+                                 `deleted_at` TIMESTAMP COMMENT '删除时间',
+                                 INDEX `idx_spuId_delete_created` (`spu_id`, `deleted_at`, `created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE `sku_price_history` (
+                                         `id` BIGINT NOT NULL PRIMARY KEY COMMENT '版本ID',
+                                         `sku_id` BIGINT NOT NULL COMMENT 'SKU ID',
+                                         `mark_price` DECIMAL(11,4) NOT NULL COMMENT '该版本对应的价格',
+                                         `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+                                         `prev_version` BIGINT COMMENT '上个版本的ID',
+                                         INDEX `idx_skuId_created` (`sku_id`, `created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    -- 订单表
+    CREATE TABLE `orders`
+    (
+      `id`                       BIGINT UNSIGNED NOT NULL PRIMARY KEY COMMENT '订单ID',
+      `status`                   TINYINT         NOT NULL COMMENT '订单状态',
+      `user_id`                  BIGINT UNSIGNED NOT NULL COMMENT '用户ID',
+      `total_amount_of_goods`    DECIMAL(15, 4)  NOT NULL COMMENT '商品总金额',
+      `total_amount_of_freight`  DECIMAL(15, 4)  NOT NULL COMMENT '商品总运费',
+      `total_amount_of_discount` DECIMAL(15, 4)  NOT NULL COMMENT '商品总优惠',
+      `payment_amount`           DECIMAL(15, 4)  NOT NULL COMMENT '支付金额',
+      `payment_status`           TINYINT         NOT NULL COMMENT '支付状态',
+      `payment_at`               BIGINT                   DEFAULT 0 COMMENT '支付时间(毫秒级时间戳)',
+      `payment_style`            VARCHAR(32)     NOT NULL COMMENT '支付类型',
+      `ordered_at`               BIGINT UNSIGNED NOT NULL COMMENT '下单时间(毫秒级时间戳)',
+      `deleted_at`               TIMESTAMP                DEFAULT NULL COMMENT '订单删除时间',
+      `delivery_at`              BIGINT UNSIGNED          DEFAULT NULL COMMENT '发货时间(毫秒级时间戳)',
+      `address_id`               BIGINT UNSIGNED NOT NULL COMMENT '地址信息ID',
+      `address_info`             VARCHAR(255)    NOT NULL COMMENT '简略地址信息',
+      `coupon_id`                BIGINT          NOT NULL DEFAULT 0 COMMENT 'coupon id 用于全局优惠',
+      `coupon_name`              VARCHAR(255)    NOT NULL DEFAULT '' COMMENT '优惠券名称',
+      INDEX `idx_order_deleted_at` (`deleted_at`),
+      INDEX `idx_order_user_id` (`user_id`)
+    ) ENGINE = InnoDB
+      DEFAULT CHARSET = utf8mb4;
+
+    CREATE TABLE `order_goods`
+    (
+      `order_id`             BIGINT UNSIGNED NOT NULL COMMENT '订单ID',
+      `merchant_id`          BIGINT UNSIGNED NOT NULL COMMENT '商家ID 对应 user 中的 uid',
+      `goods_id`             BIGINT UNSIGNED NOT NULL COMMENT '商品ID 对应 commodity 中的 spu_id',
+      `goods_name`           VARCHAR(128)    NOT NULL COMMENT '商品名称',
+      `style_id`             BIGINT          NOT NULL COMMENT '款式ID 对应 commodity 中的 sku_id',
+      `style_name`           VARCHAR(128)    NOT NULL COMMENT '款式名称',
+      `goods_version`        BIGINT UNSIGNED NOT NULL COMMENT '快照版本号',
+      `style_head_drawing`   VARCHAR(512)    NOT NULL COMMENT '款式头图',
+      `origin_price`         DECIMAL(11, 4)  NOT NULL COMMENT '原价',
+      `sale_price`           DECIMAL(11, 4)  NOT NULL COMMENT '售卖价',
+      `single_freight_price` DECIMAL(11, 4)  NOT NULL COMMENT '单个运费',
+      `purchase_quantity`    INT UNSIGNED    NOT NULL COMMENT '购买数量',
+      `freight_amount`       DECIMAL(15, 4)  NOT NULL COMMENT '运费金额',
+      `discount_amount`      DECIMAL(15, 4)  NOT NULL COMMENT '优惠金额',
+      `payment_amount`       DECIMAL(15, 4)  NOT NULL COMMENT '应付金额',
+      `total_amount`         DECIMAL(15, 4)  NOT NULL COMMENT '结算金额 = 优惠前 - 优惠金额',
+      `single_price`         DECIMAL(11, 4)  NOT NULL COMMENT '下单单价',
+      `coupon_id`            BIGINT          NOT NULL DEFAULT 0 COMMENT '优惠券ID',
+      `coupon_name`          VARCHAR(255)    NOT NULL DEFAULT '' COMMENT '优惠券名称',
+      PRIMARY KEY (`order_id`, `goods_id`, `style_id`)
+    ) ENGINE = InnoDB
+      DEFAULT CHARSET = utf8mb4;
+    CREATE TABLE `users` (
+                           `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '使用自增主键',
+                           `username` VARCHAR(30) NOT NULL COMMENT '用户名最多 10 个中文字符或等长英文字符',
+                           `password` VARCHAR(255) NOT NULL COMMENT '数字+字母组合，总长度上限 16',
+                           `email` VARCHAR(50) NOT NULL COMMENT '邮箱',
+                           `role` SMALLINT NOT NULL default 0,
+                           `phone` VARCHAR(11) NOT NULL COMMENT '手机号'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    CREATE TABLE `payment_orders` (
+                                    `id` BIGINT NOT NULL PRIMARY KEY COMMENT '支付订单的唯一标识',
+                                    `order_id` BIGINT NOT NULL COMMENT '商户订单号',
+                                    `user_id` BIGINT NOT NULL COMMENT '用户的唯一标识',
+                                    `amount` DECIMAL(15,4) NOT NULL COMMENT '订单总金额',
+                                    `status` TINYINT NOT NULL DEFAULT 0 COMMENT '支付状态：0-待支付，1-处理中，2-成功支付 3-支付失败',
+                                    `masked_credit_card_number` VARCHAR(19) COMMENT '信用卡号 国际信用卡号的最大长度为19 (仅存储掩码，如 **** **** **** 1234)',
+                                    `credit_card_expiration_year` INT COMMENT '信用卡到期年',
+                                    `credit_card_expiration_month` INT COMMENT '信用卡到期月',
+                                    `description` VARCHAR(255) COMMENT '订单描述信息',
+                                    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '订单创建时间',
+                                    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '订单最后更新时间',
+                                    `deleted_at` TIMESTAMP NULL COMMENT '订单删除时间'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    CREATE TABLE `payment_refunds` (
+    `id` BIGINT NOT NULL PRIMARY KEY COMMENT '支付退款的唯一标识',
+    `order_id` VARCHAR(64) NOT NULL COMMENT '关联的商户订单号',
+    `user_id` BIGINT NOT NULL COMMENT '用户的唯一标识',
+    `refund_amount` DECIMAL(15,4) NOT NULL COMMENT '退款金额，单位为元',
+    `refund_reason` VARCHAR(255) COMMENT '退款原因',
+    `status` TINYINT NOT NULL DEFAULT 0 COMMENT '退款状态：0-申请中，1-处理中，2-成功退款 3-退款失败',
+    `masked_credit_card_number` VARCHAR(19) COMMENT '信用卡号 国际信用卡号的最大长度为19 (仅存储掩码，如 **** **** **** 1234)',
+    `credit_card_expiration_year` INT COMMENT '信用卡到期年',
+    `credit_card_expiration_month` INT COMMENT '信用卡到期月',
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '退款申请时间',
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '退款最后更新时间',
+    `deleted_at` TIMESTAMP NULL COMMENT '退款记录删除时间'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  
+  
+    CREATE TABLE `payment_ledger` (
+    `id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '流水ID',
+    `reference_id` BIGINT NOT NULL COMMENT '关联的支付订单或退款订单ID',
+    `user_id` BIGINT NOT NULL COMMENT '用户ID',
+    `amount` DECIMAL(15,4) NOT NULL COMMENT '交易金额（正数表示收入，负数表示支出）',
+    `transaction_type` TINYINT NOT NULL COMMENT '交易类型：1-支付，2-退款，3-手续费，4-调整',
+    `status` TINYINT NOT NULL DEFAULT 0 COMMENT '交易状态：0-待处理，1-成功，2-失败',
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '交易创建时间',
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '交易更新时间',
+    `deleted_at` TIMESTAMP NULL COMMENT '交易记录删除时间'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
+
+

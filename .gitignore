@@ -47,3 +47,4 @@ ca-key
 
 /log
 /node_modules
+/deploy/data

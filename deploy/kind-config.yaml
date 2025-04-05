@@ -1,0 +1,19 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+#    image: kindest/node:v1.27.0
+    #在本地映射端口，让外部访问集群
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 80
+        protocol: TCP
+  - role: worker
+#    image: kindest/node:v1.27.0
+  - role: worker
+#    image: kindest/node:v1.27.0
+#networking:
+#  disableDefaultCNI: false
+#  podSubnet: "10.244.0.0/16" # Pod 运行时会从这个子网中分配 IP
+#  serviceSubnet: "10.96.0.0/12" # 意思同上
+#  kubeProxyMode: "iptables"

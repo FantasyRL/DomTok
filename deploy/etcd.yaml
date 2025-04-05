@@ -1,0 +1,129 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: etcd-pv
+spec:
+  capacity:
+    storage: 200Mi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/kind/mnt/data/etcd"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: etcd-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+  volumeName: etcd-pv
+  storageClassName: ""
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: domtok-etcd
+spec:
+  # 让 StatefulSet 使用这个服务名做 DNS
+  selector:
+    app: domtok-etcd
+  ports:
+    - name: client
+      port: 2379
+      targetPort: 2379
+    - name: peer
+      port: 2380
+      targetPort: 2380
+  clusterIP: None   # StatefulSet 通常使用 headless Service。若要集群内访问可保留
+  # type: ClusterIP # 如果你想让集群外访问，可改 NodePort / LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: domtok-etcd
+spec:
+  serviceName: domtok-etcd  # 与 Service 同名
+  replicas: 1
+  selector:
+    matchLabels:
+      app: domtok-etcd
+  template:
+    metadata:
+      labels:
+        app: domtok-etcd
+    spec:
+      initContainers:
+        # 复制 config.yaml 到可写目录，避免只读问题
+        - name: copy-config
+          image: busybox:latest
+          imagePullPolicy: Never
+          command: [ "sh", "-c", "cp /config-orig/config.yaml /config/config.yaml" ]
+          volumeMounts:
+            - name: etcd-config
+              mountPath: /config-orig  # 只读 ConfigMap
+            - name: writable-config
+              mountPath: /config
+
+        # 复制 etcd-monitor.sh 到可写目录，并 `chmod +x`
+        - name: copy-script
+          image: busybox:latest
+          imagePullPolicy: Never
+          command: [ "sh", "-c", "cp /script-orig/etcd-monitor.sh /tmp/script/etcd-monitor.sh && chmod +x /tmp/script/etcd-monitor.sh" ]
+          volumeMounts:
+            - name: etcd-scripts
+              mountPath: /script-orig  # 只读 ConfigMap
+            - name: writable-script
+              mountPath: /tmp/script   # 可写目录
+
+      containers:
+        - name: etcd
+          image: quay.io/coreos/etcd:v3.5.5
+          command: [ "sh", "-c", "/tmp/script/etcd-monitor.sh & exec etcd" ] # 使用 `/tmp/script`
+          ports:
+            - containerPort: 2379
+            - containerPort: 2380
+
+          env:
+            - name: ETCD_LISTEN_CLIENT_URLS
+              value: "http://0.0.0.0:2379"
+            - name: ETCD_ADVERTISE_CLIENT_URLS
+              value: "http://0.0.0.0:2379"
+            - name: ETCD_API
+              value: "3"
+            - name: ALLOW_NONE_AUTHENTICATION
+              value: "yes"
+
+          volumeMounts:
+            - name: etcd-data
+              mountPath: /etcd-data
+            - name: writable-config  # 让 `/config` 变成可写目录
+              mountPath: /config
+            - name: writable-script  # 让 `/tmp/script` 变成可写目录
+              mountPath: /tmp/script
+
+      volumes:
+        - name: etcd-data
+          persistentVolumeClaim:
+            claimName: etcd-pvc
+        - name: etcd-config
+          configMap:
+            name: domtok-etcd-config
+            items:
+              - key: "config.yaml"
+                path: "config.yaml"
+        - name: etcd-scripts
+          configMap:
+            name: domtok-etcd-config
+            items:
+              - key: "etcd-monitor.sh"
+                path: "etcd-monitor.sh"
+        - name: writable-config  # 让 `/config` 可写
+          emptyDir: {}
+        - name: writable-script  # 让 `/tmp/script` 可写
+          emptyDir: {}

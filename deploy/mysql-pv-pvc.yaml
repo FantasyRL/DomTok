@@ -1,0 +1,30 @@
+# PV (PersistentVolume)
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  # 当 PVC 释放后，PV 上的数据不自动删除，需要手动清理或重新绑定
+  persistentVolumeReclaimPolicy: Retain
+  # 在 Kind 环境中，hostPath 用于本地持久化；生产环境慎用
+  hostPath:
+    path: "/kind/mnt/data/mysql"
+
+---
+# PVC (PersistentVolumeClaim)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  volumeName: mysql-pv
+  storageClassName: ""  # 这里设置为空，匹配 PV，storageClass是自动分配存储

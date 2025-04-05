@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/kind/mnt/data/redis"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: redis-pv
+  storageClassName: ""
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: domtok-redis
+spec:
+  selector:
+    app: domtok-redis
+  ports:
+    - name: redis
+      protocol: TCP
+      port: 6379
+      targetPort: 6379
+  type: NodePort   # 如果仅需集群内访问可改为: ClusterIP
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: domtok-redis
+spec:
+  serviceName: "domtok-redis"  # 与 Service 同名，构建有状态 DNS
+  replicas: 1
+  selector:
+    matchLabels:
+      app: domtok-redis
+  template:
+    metadata:
+      labels:
+        app: domtok-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:bookworm
+          ports:
+            - containerPort: 6379
+          env:
+            - name: REDIS_PASSWORD
+              value: "domtok"
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "no"
+          volumeMounts:
+            - name: redis-data
+              mountPath: /data
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:
+            claimName: redis-pvc
