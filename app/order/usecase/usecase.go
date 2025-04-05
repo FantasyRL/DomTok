@@ -41,14 +41,14 @@ type OrderUseCase interface {
 }
 
 // useCase 实现了 OrderUseCase 接口
-type useCase struct {
+type UseCase struct {
 	db  repository.OrderDB
 	svc *service.OrderService
 	rpc repository.RPC
 }
 
 func NewOrderCase(db repository.OrderDB, svc *service.OrderService, rpc repository.RPC) OrderUseCase {
-	return &useCase{
+	return &UseCase{
 		db:  db,
 		svc: svc,
 		rpc: rpc,

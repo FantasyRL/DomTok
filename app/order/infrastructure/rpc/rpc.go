@@ -32,20 +32,20 @@ import (
 	"github.com/west2-online/domtok/pkg/utils"
 )
 
-type orderRpcImpl struct {
+type OrderRpcImpl struct {
 	user      userservice.Client
 	commodity commodityservice.Client
 }
 
 func NewOrderRpcImpl(u userservice.Client, c commodityservice.Client) repository.RPC {
-	return &orderRpcImpl{u, c}
+	return &OrderRpcImpl{u, c}
 }
 
-func (rpc *orderRpcImpl) GetAddressInfo(ctx context.Context, addressId int64) (string, error) {
+func (rpc *OrderRpcImpl) GetAddressInfo(ctx context.Context, addressId int64) (string, error) {
 	return "", nil
 }
 
-func (rpc *orderRpcImpl) QueryGoodsInfo(ctx context.Context, goods []*model.BaseOrderGoods) ([]*model.OrderGoods, error) {
+func (rpc *OrderRpcImpl) QueryGoodsInfo(ctx context.Context, goods []*model.BaseOrderGoods) ([]*model.OrderGoods, error) {
 	skuVs := lo.Map(goods, func(item *model.BaseOrderGoods, index int) *kmodel.SkuVersion {
 		v := &kmodel.SkuVersion{
 			SkuID:     item.StyleID,
@@ -92,7 +92,7 @@ func (rpc *orderRpcImpl) QueryGoodsInfo(ctx context.Context, goods []*model.Base
 }
 
 // WithholdSkuStock 预扣除商品数量
-func (rpc *orderRpcImpl) WithholdSkuStock(ctx context.Context, stocks *model.OrderStock) error {
+func (rpc *OrderRpcImpl) WithholdSkuStock(ctx context.Context, stocks *model.OrderStock) error {
 	infos := stockToSkuBuyInfo(stocks)
 
 	resp, err := rpc.commodity.IncrSkuLockStock(ctx, &commodity.IncrSkuLockStockReq{Infos: infos})
@@ -104,7 +104,7 @@ func (rpc *orderRpcImpl) WithholdSkuStock(ctx context.Context, stocks *model.Ord
 }
 
 // RollbackSkuStock 增加商品库存, 用于预扣接口的回滚
-func (rpc *orderRpcImpl) RollbackSkuStock(ctx context.Context, stock *model.OrderStock) error {
+func (rpc *OrderRpcImpl) RollbackSkuStock(ctx context.Context, stock *model.OrderStock) error {
 	infos := stockToSkuBuyInfo(stock)
 
 	resp, err := rpc.commodity.DescSkuLockStock(ctx, &commodity.DescSkuLockStockReq{Infos: infos})
@@ -116,7 +116,7 @@ func (rpc *orderRpcImpl) RollbackSkuStock(ctx context.Context, stock *model.Orde
 }
 
 // DescSkuStock 确认商品数量扣除
-func (rpc *orderRpcImpl) DescSkuStock(ctx context.Context, stock *model.OrderStock) error {
+func (rpc *OrderRpcImpl) DescSkuStock(ctx context.Context, stock *model.OrderStock) error {
 	infos := stockToSkuBuyInfo(stock)
 
 	resp, err := rpc.commodity.DescSkuStock(ctx, &commodity.DescSkuStockReq{Infos: infos})
@@ -128,7 +128,7 @@ func (rpc *orderRpcImpl) DescSkuStock(ctx context.Context, stock *model.OrderSto
 }
 
 // CalcOrderGoodsPrice 通过 coupon 的接口计算订单商品的最终价格
-func (rpc *orderRpcImpl) CalcOrderGoodsPrice(ctx context.Context, goods []*model.OrderGoods) ([]*model.OrderGoods, error) {
+func (rpc *OrderRpcImpl) CalcOrderGoodsPrice(ctx context.Context, goods []*model.OrderGoods) ([]*model.OrderGoods, error) {
 	rpcOrderGoods := lo.Map(goods, func(g *model.OrderGoods, index int) *kmodel.OrderGoods {
 		return &kmodel.OrderGoods{
 			OrderId:            g.OrderID,

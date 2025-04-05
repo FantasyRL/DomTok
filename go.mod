@@ -22,6 +22,7 @@ require (
 	github.com/go-redsync/redsync/v4 v4.13.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/google/uuid v1.6.0
+	github.com/google/wire v0.6.0
 	github.com/h2non/filetype v1.1.3
 	github.com/hertz-contrib/cors v0.1.0
 	github.com/hertz-contrib/gzip v0.0.3

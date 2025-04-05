@@ -92,7 +92,7 @@ func TestOrder_Locker(t *testing.T) {
 					<-acquired // 确保第一个已持有锁
 
 					// 尝试非阻塞获取锁，预期失败
-					lc := l.(*locker) //nolint
+					lc := l.(*Locker) //nolint
 					if lc.rs.NewMutex(getKey(id)).TryLock() == nil {
 						// 如果真的拿到锁了 (预期中不应该走到这)
 						getLock = true

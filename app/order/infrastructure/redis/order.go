@@ -31,20 +31,20 @@ import (
 	"github.com/west2-online/domtok/pkg/logger"
 )
 
-type orderCache struct {
+type OrderCache struct {
 	client                 *redis.Client
 	expire                 time.Duration
 	updatePaymentStatusLua string
 }
 
 func NewOrderCache(client *redis.Client) repository.Cache {
-	c := &orderCache{client: client}
+	c := &OrderCache{client: client}
 	c.loadUpdateLUAScript()
 	c.expire = constants.OrderPaymentStatusExpireTime
 	return c
 }
 
-func (cache *orderCache) SetPaymentStatus(ctx context.Context, s *model.CachePaymentStatus) error {
+func (cache *OrderCache) SetPaymentStatus(ctx context.Context, s *model.CachePaymentStatus) error {
 	exK, sK := getExpireKey(s.OrderID), getStatusKey(s.OrderID)
 	if err := cache.client.Set(ctx, exK, s.OrderExpire, cache.expire).Err(); err != nil {
 		return errno.NewErrNo(errno.InternalRedisErrorCode, fmt.Sprintf("failed set key: %s to %v, err: %v", exK, sK, err))
@@ -55,7 +55,7 @@ func (cache *orderCache) SetPaymentStatus(ctx context.Context, s *model.CachePay
 	return nil
 }
 
-func (cache *orderCache) GetPaymentStatus(ctx context.Context, orderID int64) (*model.CachePaymentStatus, bool, error) {
+func (cache *OrderCache) GetPaymentStatus(ctx context.Context, orderID int64) (*model.CachePaymentStatus, bool, error) {
 	exK, sK := getExpireKey(orderID), getStatusKey(orderID)
 	var ex, s int64
 	var err error
@@ -77,7 +77,7 @@ func (cache *orderCache) GetPaymentStatus(ctx context.Context, orderID int64) (*
 }
 
 // UpdatePaymentStatus 使用 lua 脚本保证了过程的原子性
-func (cache *orderCache) UpdatePaymentStatus(ctx context.Context, s *model.CachePaymentStatus) (bool, error) {
+func (cache *OrderCache) UpdatePaymentStatus(ctx context.Context, s *model.CachePaymentStatus) (bool, error) {
 	exK, sK := getExpireKey(s.OrderID), getStatusKey(s.OrderID)
 	result, err := cache.client.EvalSha(ctx, cache.updatePaymentStatusLua, []string{exK, sK}, s.OrderExpire, s.PaymentStatus, cache.expire).Result()
 	if err != nil {
@@ -91,7 +91,7 @@ func (cache *orderCache) UpdatePaymentStatus(ctx context.Context, s *model.Cache
 	return rel == constants.OrderCacheLuaKeyExistFlag, nil
 }
 
-func (cache *orderCache) DeletePaymentStatus(ctx context.Context, orderID int64) error {
+func (cache *OrderCache) DeletePaymentStatus(ctx context.Context, orderID int64) error {
 	exK, sK := getExpireKey(orderID), getStatusKey(orderID)
 	if err := cache.client.Del(ctx, exK, sK).Err(); err != nil {
 		return errno.NewErrNo(errno.InternalRedisErrorCode, fmt.Sprintf("failed to delete key: %s, %s, err: %v", exK, sK, err))
@@ -99,7 +99,7 @@ func (cache *orderCache) DeletePaymentStatus(ctx context.Context, orderID int64)
 	return nil
 }
 
-func (cache *orderCache) loadUpdateLUAScript() {
+func (cache *OrderCache) loadUpdateLUAScript() {
 	sha1, err := cache.client.ScriptLoad(context.Background(), constants.OrderUpdatePaymentStatusLuaScript).Result()
 	if err != nil {
 		logger.Fatalf("failed to load lua script: %v", err)
